@@ -1,8 +1,9 @@
-## Welcome to GitHub Pages
+# COVID-19_Twitter_Sentiment_Analysis
+#### Akash Shah, Chiche Tsai, Jiaxi Xu, Zijing Wu
 
-You can use the [editor on GitHub](https://github.com/miles-zijingwu/COVID19_Twitter_Sentiment_Analysis/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![Atlanta Skyline](https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/heading_image.jpg)
+
 
 ### Markdown
 
