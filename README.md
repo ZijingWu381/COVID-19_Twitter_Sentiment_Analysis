@@ -62,7 +62,7 @@ Since our test set is almost balanced, we relied on “accuracy” as the evalua
 
 Logistic Regression was implemented as the baseline model due to its relatively simple implementation as well as its general intuitiveness. Logistic Regression will perform well in many tasks and is a great place to start when building models. In our literature research, we found that logistic regression was fairly accurate in analyzing and predicting shorter tweets and decided to implement it and then work to improve prediction accuracy with various other models. Before this model, along with the future models, could be trained, the text data had to be vectorized in order to assign a number to different n-grams, as well as to extract text features with higher significance toward sentiment. This model was then trained and validated on a 200,000 tweet dataset, using 75% to train and 25% to validate. 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/LR/LogRegression.png" width="500">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/LogRegression.png" width="500">
 </p>
 
 #### Tuning Process
@@ -85,7 +85,7 @@ grid_result = grid_search.fit(x_train_features, y_train)
 
 The model results were indeed quite successful for a baseline model. The above result shows the result of the validation set; however, on the test set the model had an accuracy score of 73.54%. This was very pleasing, but there was certainly room for improvement with further work in implementing some more sophisticated models.
 <p align="center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/LR/results.png" width="500">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/results.png" width="500">
 </p>
 
 ### Multinomial Naive Bayes
@@ -159,7 +159,24 @@ We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLS
 
 We first trained our model on a 20,000 subset of the training data with a train validation splitting ratio of 0.2. The small number of tweets let us make quick updates of the hyperparameters with short iterations. We apply orthogonal principle to our tuning procedure. Eventually, the maximum size of vocabulary was set as 20,000. The batch size was set to be 256. The maximum length of a sentence padding is 40. We applied a customized exponential learning rate decay which is constant in the initial 2 epochs and exponentially decays afterwards. The start learning rate is set to be 0.0018. We then trained our model on the full 1.6 million tweets to fine tuned the start learning rate and make appropriate adjustments to the epoch numbers.
 
+<p align="center">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="500">
+</p>
+<p align="center">This is a centered caption for the image<p align="center">
+
 #### Result
+
+<p align="center">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_loss_fx_acc.png" width="500">
+</p>
+<p align="center">This is a centered caption for the image<p align="center">
+  
+<p align="center">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_class_report.png" width="500">
+</p>
+<p align="center">This is a centered caption for the image<p align="center">
+  
+  
 
 ## Result Comparison
 ```markdown
