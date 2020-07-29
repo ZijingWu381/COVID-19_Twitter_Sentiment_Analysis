@@ -54,8 +54,45 @@ Since our test set is almost balanced, we relied on “accuracy” as the evalua
 
 ### Multinomial Naive Bayes
 #### Model Design
+
+Despite its naive probability independence assumption and inaccurate numerical prediction, Naive Bayes is an effective text classification algorithm especially for short texts. [8] We chose Multinomial Naive Bayes algorithm because the textual features are finite discrete variables. Before we fit the classifier on the training data, we used a vectorizer to vectorize the text with different combinations of n-grams. Then, we used a tf-idf (term frequency–inverse document frequency) transformer to extract textual features. Using a tf-idf transformer gives more weights to terms that have statistical significance in sentiment and less weights to common terms in the corpus which have insignificant impact on the text sentiment, for example, the stopwords.
+To tune the hyperparameters of the vectorizer, transformer, classifiers, we used the PipeLine method in the scikit-learn library to pipe the chosen values for the hyperparameters, as described in the next section.
+
+
 #### Tuning Process
+
+We first trained the model on a 3000 subset of the training set, using PipeLine to collectively gather the algorithm performance. We narrowed down the hyperparameter selections by comparing the mean and standard deviation of prediction accuracy using different hyperparameter combinations. We eventually chose the following hyperparameter values.
+
+
+```
+text_clf = Pipeline([('vect', CountVectorizer()),
+                      ('tfidf', TfidfTransformer()),
+                      ('clf', MultinomialNB())])
+
+tuned_parameters = {
+    'vect__ngram_range': [(1, 1), (1, 2), (2, 2), (1, 3), (2, 3), (3, 3)],
+    'tfidf__use_idf': [False, True],
+    'tfidf__norm': ('l1', 'l2'),
+    'clf__alpha': [1, 1e-1, 1e-2],
+}
+
+score = 'f1_macro'
+
+clf = GridSearchCV(text_clf, tuned_parameters, cv=10, scoring=score) 
+```
+
+```
+tuned_parameters = {
+    'vect__ngram_range': [(1, 3)],
+    'tfidf__use_idf': [False],
+    'tfidf__norm': ('l2'), 
+    'clf__alpha': [1],
+}
+```
 #### Result
+
+We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report for classifying the training, validation, and test set are illustrated in fig[].
+
 
 ### Support Vector Machine (SVM)
 #### Model Design
