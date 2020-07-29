@@ -62,7 +62,7 @@ Since our test set is almost balanced, we relied on “accuracy” as the evalua
 
 Logistic Regression was implemented as the baseline model due to its relatively simple implementation as well as its general intuitiveness. Logistic Regression will perform well in many tasks and is a great place to start when building models. In our literature research, we found that logistic regression was fairly accurate in analyzing and predicting shorter tweets and decided to implement it and then work to improve prediction accuracy with various other models. Before this model, along with the future models, could be trained, the text data had to be vectorized in order to assign a number to different n-grams, as well as to extract text features with higher significance toward sentiment. This model was then trained and validated on a 200,000 tweet dataset, using 75% to train and 25% to validate. 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/LogRegression.png" width="500">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/LR/LogRegression.png" width="500">
 </p>
 
 #### Tuning Process
@@ -85,7 +85,7 @@ grid_result = grid_search.fit(x_train_features, y_train)
 
 The model results were indeed quite successful for a baseline model. The above result shows the result of the validation set; however, on the test set the model had an accuracy score of 73.54%. This was very pleasing, but there was certainly room for improvement with further work in implementing some more sophisticated models.
 <p align="center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/results.png" width="500">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/LRresults.png" width="500">
 </p>
 
 ### Multinomial Naive Bayes
