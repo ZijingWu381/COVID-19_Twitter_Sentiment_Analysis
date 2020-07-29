@@ -2,7 +2,7 @@
 #### Akash Shah, Chiche Tsai, Jiaxi Xu, Zijing Wu
 
 
-![Atlanta Skyline](https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/heading_image.jpg)
+![Twitter Sentiment Analysis](https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/heading_image.jpg)
 
 
 ## Introduction and Motivation
@@ -29,7 +29,7 @@ Because of this and the exploration nature of this project, it is worth experime
 
 ## Related Works
 
-t has been shown that compared to Ebola and Zika virus, information flow of twitter on coronavirus outbreak is relevant and mostly accurate and contains minor misinformation [6]. So it could potentially generate helpful public benefit in the current outbreak. 
+It has been shown that compared to Ebola and Zika virus, information flow of twitter on coronavirus outbreak is relevant and mostly accurate and contains minor misinformation [6]. So it could potentially generate helpful public benefit in the current outbreak. 
 
 However, while much work has been done towards various aspects of COVID-19, little work has directly addressed the problem of estimating public sentiment towards this major issue [6], which might be due to a lack of labeled dataset. Existing work [7] [8] has tried to evaluate the sentiment score by existing API’s, but this might not be effective. By our inspection, the evaluated scores are not accurate, which might be due to either the capability of the API’s algorithm or that the sentiment analysis methods of the API’s are not trained specifically to address tweets’ special language expression.
 
@@ -89,10 +89,15 @@ tuned_parameters = {
     'clf__alpha': [1],
 }
 ```
+
 #### Result
 
 We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report for classifying the training, validation, and test set are illustrated in fig[].
 
+<p align="center">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/Naive%20Bayes/NB_class_report.png" width="500">
+</p>
+<p align="center">This is a centered caption for the image<p align="center">
 
 ### Support Vector Machine (SVM)
 #### Model Design
