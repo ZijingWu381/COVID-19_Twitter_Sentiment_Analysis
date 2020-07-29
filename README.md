@@ -169,6 +169,8 @@ We first trained our model on a 20,000 subset of the training data with a train 
 
 #### Result
 
+
+
 <p align="center">
   <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_loss_fx_acc.png" width="500">
 </p>
