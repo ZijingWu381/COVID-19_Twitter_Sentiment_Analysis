@@ -38,9 +38,19 @@ Therefore, to provide the solution, we had our data trained and tested on Sentim
 
 ## Dataset
 
+### Training and Validation Set
+
+The dataset we used to train our models is Sentiment140 []. It is a balanced dataset containing around 1.6 million tweets, with 0.8 million tweets each for tweets with positive and negative sentiment. Sentiment polarity is labeled by 0 and 4, corresponding to negative and positive sentiment. The data is mined and classified using emoticons. The emoticons are removed in the tweets afterwards. A tweet was labeled as positive if it contained emoticons with positive sentiment, and vice versa. This method has been shown effective for identifying the sentiment []. The data would be preprocessed. An appropriate amount of tweets would be randomly selected when training each classifier and splitted into training and validation set by a customized ratio.
+
+### Testing Set
+
+The test set contains 177 negative and 182 positive tweets after dropping tweets with neutral sentiment. The sentiment scores are manually graded to ensure the correctness. The performance of each machine learning model is assessed by its accuracy on the testing set to gain an unbiased comparison. In the end, we applied the models on the geo-tagged COVID-19 tweet dataset to visualize the sentiment scores on a map. 
+
 ## Methods & Designs
 
-Given the course based nature of the project,  it is worth trying out multiple different machine learning techniques for our task. We used the classic logistic regression as the baseline algorithm in this project and then implemented Multinomial NB, SVM, and BiLSTM classifiers. NB and SVM are two machine learning approaches that traditionally perform well in sentiment classification tasks. Compared to neural networks, both algorithms require comparatively short training time and yield relatively high classification accuracy with limited data. It is commonly held that Support Vector Machine has an overall high performance especially with large feature sets. While when dealing with relatively small feature sets, Naive Bayes performs well [9] [10].
+Given the course based nature of the project,  it is worth trying out multiple different machine learning techniques for our task. We used the classic logistic regression as the baseline algorithm in this project and then implemented Multinomial NB, SVM, and BiLSTM classifiers. NB and SVM are two machine learning approaches that traditionally perform well in sentiment classification tasks. Compared to neural networks, both algorithms require comparatively short training time and yield relatively high classification accuracy with limited data. It is commonly held that Support Vector Machine has an overall high performance especially with large feature sets. While when dealing with relatively small feature sets, Naive Bayes performs well [9] [10] Finally, we leverage the large amount of data to build and train a BiLSTM classifier. 
+
+The following will elaborate our text preprocessing process, evaluation metric. For each model, we will explain the model design and tuning process, following which we will present the result on the test set for comparison. 
 
 ### Preprocessing
 ### Evaluation Metric
@@ -131,8 +141,24 @@ We scaled the training set to 200,000 tweets with a training-validation split of
 #### Result
 
 ### Bidirectional LSTM Recurrent Neural Network
+
 #### Model Design
+
+Although NB and SVM have shown their consistent reliable performance in a variety of text classification tasks, in recent years, deep learning methods have outperformed them as more data are available and more neural network architectures and word embedding methods are designed. Thus, and given the large size of the 1.6 million training data, we decided to build a neural network model to classify the sentiment. 
+
+For word embedding, we used a pre-trained GloVe word vector obtained by crawling 840B words online []. The words vector has 2.2 million vocabulary and 300 dimensional semantic properties. With word embedding, we are able to train a model to predict sentiment of words even though they are not contained in the training set vocabulary. For example, we could still use our model to accurately predict the sentiment of “It is fantastic,” suppose the term ‘fantastic’ is not in our vocabulary,  because a synonym of it, take ‘awesome’ for example, is in our vocabulary. That the two terms have similar word representation vectors in our pre-train GloVe word vector enables our model to generalize its training. 
+
+We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLSTM is a sequential neural network layer that could capture the long-term dependency among the words in a sentence. A single module of a BiLSTM layer is illustrated in fig[]. In practice, although we found that CNN (Convolutional Neural Network) can be fully trained on the training data in a relatively short period of time and produce higher results than the other three machine learning algorithms we implemented, BiLSTM offers higher performance in all the classification evaluation metrics. Fig [] shows the overall architecture of our model. The model used Adam and binary cross entropy as the optimizer and loss function metric respectively.
+
+<p align="center">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="500">
+</p>
+<p align="center">This is a centered caption for the image<p align="center">
+
 #### Tuning Process
+
+We first trained our model on a 20,000 subset of the training data with a train validation splitting ratio of 0.2. The small number of tweets let us make quick updates of the hyperparameters with short iterations. We apply orthogonal principle to our tuning procedure. Eventually, the maximum size of vocabulary was set as 20,000. The batch size was set to be 256. The maximum length of a sentence padding is 40. We applied a customized exponential learning rate decay which is constant in the initial 2 epochs and exponentially decays afterwards. The start learning rate is set to be 0.0018. We then trained our model on the full 1.6 million tweets to fine tuned the start learning rate and make appropriate adjustments to the epoch numbers.
+
 #### Result
 
 ## Result Comparison
