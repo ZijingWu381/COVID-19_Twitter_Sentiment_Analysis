@@ -56,10 +56,19 @@ Logistic Regression was implemented as the baseline model due to its relatively 
 #### Tuning Process
 
 Next, the model hyperparameters were tuned and chosen based on the mean and standard deviation of each combination of hyperparameters. The hyperparameters most important for Logistic Regression are ‘solver’, ‘penalty’, and ‘C’, and we chose the values based on the following results.
-<p align="center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Tuning_process.png" width="1000">
-</p>
 
+```
+logModel = LogisticRegression()
+solvers = ['newton-cg', 'lbfgs', 'liblinear']
+penalty = ['l2']
+c_values = [100, 10, 1.0, 0.1, 0.01]
+grid = dict(solver = solvers, penalty = penalty, C = c_values)
+cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+grid_search = GridSearchCV(estimator = logModel, param_grid = grid, n_jobs=-1, cv = cv, scoring='accuracy', error_score=0)
+grid_result = grid_search.fit(x_train_features, y_train)
+
+>>> Best: 0.819647 using {'C': 10, 'penalty': 'l2', 'solver': 'newton-cg'}
+```
 #### Result
 
 The model results were indeed quite successful for a baseline model. The above result shows the result of the validation set; however, on the test set the model had an accuracy score of 73.54%. This was very pleasing, but there was certainly room for improvement with further work in implementing some more sophisticated models.
