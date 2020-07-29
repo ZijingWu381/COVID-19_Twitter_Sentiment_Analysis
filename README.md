@@ -56,7 +56,9 @@ Logistic Regression was implemented as the baseline model due to its relatively 
 #### Tuning Process
 
 Next, the model hyperparameters were tuned and chosen based on the mean and standard deviation of each combination of hyperparameters. The hyperparameters most important for Logistic Regression are ‘solver’, ‘penalty’, and ‘C’, and we chose the values based on the following results.
-img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Tuning_process.png" width="500">
+<p align="center">
+  img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Tuning_process.png" width="500">
+</p>
 
 #### Result
 
