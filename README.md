@@ -63,7 +63,9 @@ Next, the model hyperparameters were tuned and chosen based on the mean and stan
 #### Result
 
 The model results were indeed quite successful for a baseline model. The above result shows the result of the validation set; however, on the test set the model had an accuracy score of 73.54%. This was very pleasing, but there was certainly room for improvement with further work in implementing some more sophisticated models.
-
+<p align="center">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/results.png" width="1000">
+</p>
 
 ### Multinomial Naive Bayes
 #### Model Design
