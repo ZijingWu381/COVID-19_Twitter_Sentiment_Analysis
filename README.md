@@ -29,20 +29,24 @@ Because of this and the exploration nature of this project, it is worth experime
 
 ## Related Works
 
+t has been shown that compared to Ebola and Zika virus, information flow of twitter on coronavirus outbreak is relevant and mostly accurate and contains minor misinformation [6]. So it could potentially generate helpful public benefit in the current outbreak. 
+
+However, while much work has been done towards various aspects of COVID-19, little work has directly addressed the problem of estimating public sentiment towards this major issue [6], which might be due to a lack of labeled dataset. Existing work [7] [8] has tried to evaluate the sentiment score by existing API’s, but this might not be effective. By our inspection, the evaluated scores are not accurate, which might be due to either the capability of the API’s algorithm or that the sentiment analysis methods of the API’s are not trained specifically to address tweets’ special language expression.
+
+Therefore, to provide the solution, we had our data trained and tested on Sentiment140, a sentiment analysis dataset containing 1.6 millions tweets. And then we hydrated and assessed the tweets mined with 54 COVID-19 related keywords with our models to present the result. 
+
+
 ## Dataset
 
-##
-
-##
-
-
-##
-
-##
 ## Methods & Designs
+
+Given the course based nature of the project,  it is worth trying out multiple different machine learning techniques for our task. We used the classic logistic regression as the baseline algorithm in this project and then implemented Multinomial NB, SVM, and BiLSTM classifiers. NB and SVM are two machine learning approaches that traditionally perform well in sentiment classification tasks. Compared to neural networks, both algorithms require comparatively short training time and yield relatively high classification accuracy with limited data. It is commonly held that Support Vector Machine has an overall high performance especially with large feature sets. While when dealing with relatively small feature sets, Naive Bayes performs well [9] [10].
 
 ### Preprocessing
 ### Evaluation Metric
+
+Since our test set is almost balanced, we relied on “accuracy” as the evaluation metric to compare our models’ performance. While other classification metrics including F1 scores, recall, precision are also presented in the results.
+
 ### Baseline: Logistic Regression
 #### Model Design
 #### Tuning Process
@@ -62,6 +66,8 @@ Because of this and the exploration nature of this project, it is worth experime
 #### Model Design
 #### Tuning Process
 #### Result
+
+## Result Comparison
 ```markdown
 Syntax highlighted code block
 
