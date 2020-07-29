@@ -144,25 +144,25 @@ We scaled the training set to 200,000 tweets with a training-validation split of
 
 #### Model Design
 
-Although NB and SVM have shown their consistent reliable performance in a variety of text classification tasks, in recent years, deep learning methods have outperformed them as more data are available and more neural network architectures and word embedding methods are designed. Thus, and given the large size of the 1.6 million training data, we decided to build a neural network model to classify the sentiment. 
+Although NB and SVM have shown their consistent reliable performance in a variety of text classification tasks, in recent years, deep learning methods have outperformed them as more data are available and more neural network architectures and word embedding methods are designed. And given the large size of the 1.6 million training data, we decided to build a neural network model to classify the sentiment. 
 
-For word embedding, we used a pre-trained GloVe word vector obtained by crawling 840B words online []. The words vector has 2.2 million vocabulary and 300 dimensional semantic properties. With word embedding, we are able to train a model to predict sentiment of words even though they are not contained in the training set vocabulary. For example, we could still use our model to accurately predict the sentiment of “It is fantastic,” suppose the term ‘fantastic’ is not in our vocabulary,  because a synonym of it, take ‘awesome’ for example, is in our vocabulary. That the two terms have similar word representation vectors in our pre-train GloVe word vector enables our model to generalize its training. 
+For word embedding, we used a pre-trained GloVe word vector obtained by crawling 840B words online []. The words vector has 2.2 million vocabulary and 300 dimensional semantic properties. With word embedding, we are able to train a model to predict sentiment of words even though they are not contained in the training set vocabulary. For example, we could still use our model to accurately predict the sentiment of “It is fantastic,” suppose the term ‘fantastic’ is not in our vocabulary,  because a synonym of it, take ‘awesome’ for example, is in our vocabulary. That the two terms have similar word representation vectors in our pre-train GloVe model enables our model to transfer its training. 
 
-We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLSTM is a sequential neural network layer that could capture the long-term dependency among the words in a sentence. A single module of a BiLSTM layer is illustrated in fig[]. In practice, although we found that CNN (Convolutional Neural Network) can be fully trained on the training data in a relatively short period of time and produce higher results than the other three machine learning algorithms we implemented, BiLSTM offers higher performance in all the classification evaluation metrics. Fig [] shows the overall architecture of our model. The model used Adam and binary cross entropy as the optimizer and loss function metric respectively.
+We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLSTM is a sequential neural network layer that could capture the long-term dependency among the words in a sentence. A single module of a BiLSTM layer is illustrated in Fig[]. In practice, although we found that CNN (Convolutional Neural Network) can be fully trained on the training data in a relatively short period of time and produce higher results than the other three machine learning algorithms we implemented, BiLSTM offers higher performance in all the classification evaluation metrics. Fig [] shows the overall architecture of our model. The model used Adam and binary cross entropy as the optimizer and loss function metric respectively.
 
 <p align="center">
   <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="500">
 </p>
 <p align="center">This is a centered caption for the image<p align="center">
-
+  
+<p align="center">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_architecture.png" width="500">
+</p>
+<p align="center">This is a centered caption for the image<p align="center">
+  
 #### Tuning Process
 
 We first trained our model on a 20,000 subset of the training data with a train validation splitting ratio of 0.2. The small number of tweets let us make quick updates of the hyperparameters with short iterations. We apply orthogonal principle to our tuning procedure. Eventually, the maximum size of vocabulary was set as 20,000. The batch size was set to be 256. The maximum length of a sentence padding is 40. We applied a customized exponential learning rate decay which is constant in the initial 2 epochs and exponentially decays afterwards. The start learning rate is set to be 0.0018. We then trained our model on the full 1.6 million tweets to fine tuned the start learning rate and make appropriate adjustments to the epoch numbers.
-
-<p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="500">
-</p>
-<p align="center">This is a centered caption for the image<p align="center">
 
 #### Result
 
