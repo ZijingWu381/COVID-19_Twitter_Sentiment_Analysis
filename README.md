@@ -159,7 +159,7 @@ We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLS
 In practice, although we found that CNN (Convolutional Neural Network) can be fully trained on the training data in a relatively short period of time and produce higher results than the other three machine learning algorithms we implemented, BiLSTM offers higher performance in all the classification evaluation metrics. Fig [] shows the overall architecture of our model. The model used Adam and binary cross entropy as the optimizer and loss function metric respectively.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_architecture.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_architecture.png" width="200">
 </p>
 <p align="center">This is a centered caption for the image<p align="center">
   
