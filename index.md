@@ -260,7 +260,7 @@ The purpose of this project was to develop a tool to analyze public sentiment on
     <th style = "width:440px">Cons</th>
   </tr>
   <tr>
-    <td>LR</td>
+    <td align="center" valign="center">LR</td> 
     <td>
       <ul>
         <li>Relatively quick and easy implementation make it a good baseline model</li>
@@ -276,7 +276,7 @@ The purpose of this project was to develop a tool to analyze public sentiment on
   </tr>
   
   <tr>
-    <td>NB</td>
+    <td align="center" valign="center">NB</td>
     <td>
       <ul>
         <li>Efficient to tune with its few hyperparameters</li>
@@ -292,7 +292,7 @@ The purpose of this project was to develop a tool to analyze public sentiment on
   </tr>
   
   <tr>
-    <td>SVM</td>
+    <td align="center" valign="center">SVM</td>
     <td>
       <ul>
         <li>Accurate in high dimensional space</li>
@@ -309,7 +309,7 @@ The purpose of this project was to develop a tool to analyze public sentiment on
   </tr>
   
   <tr>
-    <td>BiLSTM</td>
+    <td align="center" valign="center">BiLSTM</td>
     <td>
       <ul>
         <li>Achieve higher accuracy compared to other models by a relatively large margin</li>
