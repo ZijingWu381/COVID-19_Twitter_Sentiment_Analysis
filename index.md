@@ -2,7 +2,7 @@
 #### Akash Shah, Chiche Tsai, Jiaxi Xu, Zijing Wu
 
 
-![Twitter Sentiment Analysis](https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/heading_image.jpg)
+![Twitter Sentiment Analysis](Image/heading_image.jpg)
 
 
 ## Introduction and Motivation
@@ -67,7 +67,7 @@ Since our test set is almost balanced, we relied on “accuracy” as the evalua
 
 Logistic Regression was implemented as the baseline model due to its relatively simple implementation as well as its general intuitiveness. Logistic Regression will perform well in many tasks and is a great place to start when building models. In our literature research, we found that logistic regression was fairly accurate in analyzing and predicting shorter tweets and decided to implement it and then work to improve prediction accuracy with various other models. Before this model, along with the future models, could be trained, the text data had to be vectorized in order to assign a number to different n-grams, as well as to extract text features with higher significance toward sentiment. This model was then trained and validated on a 200,000 tweet dataset, using 75% to train and 25% to validate. 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/LogRegression.png" width="500">
+  <img src = "LogRegression.png" width="500">
 </p>
 <p align="center">Visual demonstration of the Logistic Regression model</p>
 <p align = "center">Source: https://machinelearning-blog.com/2018/04/23/logistic-regression-101/</p>
@@ -141,7 +141,7 @@ tuned_parameters = {
 We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report for classifying the training, validation, and test set are illustrated in the folowing.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/Naive%20Bayes/NB_class_testset_report.png" width="500">
+  <img src="Image/Naive_Bayes/NB_class_testset_report.png" width="500">
 </p>
 <p align="center">The testset classification report for the NB model <p align="center">
 
