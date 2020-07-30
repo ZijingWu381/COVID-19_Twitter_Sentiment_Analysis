@@ -10,10 +10,12 @@
 Since its discovery, the COVID-19 pandemic has quickly become a worldwide crisis that is threatening public health. By the time of writing this report, there have been over 4.3 millions infections and 149 thousands deaths cumulatively in the United States and over 16.2 millions cases and 648 thousands deaths worldwide ('Google News', 2020). Polarized emotion arises as people facing this unprecedented event and could lead to social unrest. When trying to mitigate such public health risk and reopen business, policy makers need to know the real-time and accurate assessment of the public sentiment so that they can make the most effective regulations accordingly. 
 
 ### Why Twitter?
+
 However, the traditional approaches like census or sampling are either slow or not comprehensive. Instead, we aim to provide a faster and more comprehensive assessment of public sentiment. This could be done by performing sentiment analysis on the recent tweet data using machine learning approaches. Nowadays, people frequently share personal experience which may contain a certain level of  sentiment on social media. Especially for Twitter, the US accounts for 31 millions active daily users becoming a decent resource  to collect the public’s sentiment ('OMNICORE', 2020). Given the large number of active users, mining tweets has the potential to give fast and real estimation of people’s sentiment towards the pandemic. 
 
 ### Project Overview
-In our work, we acquired two datasets on twitter sentiment analysis subsequently. The first is the a COVID-19 specific sentiment analysis dataset (Lamsal, 2020) found online when we first started the project. It contains over 150 thousands geo-tagged tweets mined with 54 COVID-19 related keywords. However, the sentiment score was assessed using an existing API and not accurate as discovered by our inspection. Thus, we switched our dataset option, but meanwhile, we exploited the geo-tagging feature of this dataset to vividly demonstrate our results by geographically plotting the sentiment. We eventually trained our models on Sentiment140 (Go et al, 2009), a balanced tweet sentiment analysis dataset contains 1.6 millions tweets classified using emoticons, a method could classify the sentiment at a high accuracy (Read et al, 2005). We assessed and compared our performance on a manually graded testset provided by the dataset owner. 
+
+In our work, we acquired two datasets on twitter sentiment analysis subsequently. The first is the a COVID-19 specific sentiment analysis dataset (Lamsal, 2020) found online when we first started the project. It contains over 150 thousands geo-tagged tweets mined with 54 COVID-19 related keywords. However, the sentiment score was assessed using an existing API and not accurate as discovered by our inspection. Thus, we switched our dataset option, but meanwhile, we exploited the geo-tagging feature of this dataset to vividly demonstrate our results by geographically plotting the sentiment. We eventually trained our models on Sentiment140 (Go et al., 2009), a balanced tweet sentiment analysis dataset contains 1.6 millions tweets classified using emoticons, a method could classify the sentiment at a high accuracy (Read et al., 2005). We assessed and compared our performance on a manually graded testset provided by the dataset owner. 
 
 The second step is to extract textual content from Twitter via hydrator or Twitter API. In the third step, we perform preprocessing on the raw tweets. This includes removing punctuations, hashtags, and url, performing word normalization, creating vector space format and feature selection etc.. 
 
@@ -29,9 +31,9 @@ Because of this and the exploration nature of this project, it is worth experime
 
 ## Related Works
 
-It has been shown that compared to Ebola and Zika virus, information flow of twitter on coronavirus outbreak is relevant and mostly accurate and contains minor misinformation (Kaila et al. 2020). So it could potentially generate helpful public benefit in the current outbreak. 
+It has been shown that compared to Ebola and Zika virus, information flow of twitter on coronavirus outbreak is relevant and mostly accurate and contains minor misinformation (Kaila et al., 2020). So it could potentially generate helpful public benefit in the current outbreak. 
 
-However, while much work has been done towards various aspects of COVID-19, little work has directly addressed the problem of estimating public sentiment towards this major issue [6], which might be due to a lack of labeled dataset. Existing work ( () has tried to evaluate the sentiment score by existing API’s, but this might not be effective. By our inspection, the evaluated scores are not accurate, which might be due to either the capability of the API’s algorithm or that the sentiment analysis methods of the API’s are not trained specifically to address tweets’ special language expression.
+However, while much work has been done towards various aspects of COVID-19, little work has directly addressed the problem of estimating public sentiment towards this major issue, which might be due to a lack of labeled dataset. Existing work (Samuel et al., 2020), (Karisani, N., & Karisani, P., 2020) has tried to evaluate the sentiment score by existing API’s, but this might not be effective. By our inspection, the evaluated scores are not accurate, which might be due to either the capability of the API’s algorithm or that the sentiment analysis methods of the API’s are not trained specifically to address tweets’ special language expression. 
 
 Therefore, to provide the solution, we had our data trained and tested on Sentiment140, a sentiment analysis dataset containing 1.6 millions tweets. And then we hydrated and assessed the tweets mined with 54 COVID-19 related keywords with our models to present the result. 
 
@@ -40,7 +42,7 @@ Therefore, to provide the solution, we had our data trained and tested on Sentim
 
 ### Training and Validation Set
 
-The dataset we used to train our models is Sentiment140 []. It is a balanced dataset containing around 1.6 million tweets, with 0.8 million tweets each for tweets with positive and negative sentiment. Sentiment polarity is labeled by 0 and 4, corresponding to negative and positive sentiment. The data is mined and classified using emoticons. The emoticons are removed in the tweets afterwards. A tweet was labeled as positive if it contained emoticons with positive sentiment, and vice versa. This method has been shown effective for identifying the sentiment []. The data would be preprocessed. An appropriate amount of tweets would be randomly selected when training each classifier and splitted into training and validation set by a customized ratio.
+The dataset we used to train our models is Sentiment140 (Go et al., 2009). It is a balanced dataset containing around 1.6 million tweets, with 0.8 million tweets each for tweets with positive and negative sentiment. Sentiment polarity is labeled by 0 and 4, corresponding to negative and positive sentiment. The data is mined and classified using emoticons. The emoticons are removed in the tweets afterwards. A tweet was labeled as positive if it contained emoticons with positive sentiment, and vice versa. This method has been shown effective for identifying the sentiment (Read et al., 2005). The data would be preprocessed. An appropriate amount of tweets would be randomly selected when training each classifier and splitted into training and validation set by a customized ratio.
 
 ### Testing Set
 
@@ -48,7 +50,7 @@ The test set contains 177 negative and 182 positive tweets after dropping tweets
 
 ## Methods & Designs
 
-Given the course based nature of the project,  it is worth trying out multiple different machine learning techniques for our task. We used the classic logistic regression as the baseline algorithm in this project and then implemented Multinomial NB, SVM, and BiLSTM classifiers. NB and SVM are two machine learning approaches that traditionally perform well in sentiment classification tasks. Compared to neural networks, both algorithms require comparatively short training time and yield relatively high classification accuracy with limited data. It is commonly held that Support Vector Machine has an overall high performance especially with large feature sets. While when dealing with relatively small feature sets, Naive Bayes performs well [9] [10] Finally, we leverage the large amount of data to build and train a BiLSTM classifier. 
+Given the course based nature of the project, it is worth trying out multiple different machine learning techniques for our task. We used the classic logistic regression as the baseline algorithm in this project and then implemented Multinomial NB, SVM, and BiLSTM classifiers. NB and SVM are two machine learning approaches that traditionally perform well in sentiment classification tasks. Compared to neural networks, both algorithms require comparatively short training time and yield relatively high classification accuracy with limited data. It is commonly held that Support Vector Machine has an overall high performance especially with large feature sets. While when dealing with relatively small feature sets, Naive Bayes performs well (Bhavitha et al., 2017), (Mittal & Patida, 2019). Finally, we leverage the large amount of data to build and train a BiLSTM classifier. 
 
 The following will elaborate our text preprocessing process, evaluation metric. For each model, we will explain the model design and tuning process, following which we will present the result on the test set for comparison. 
 
@@ -63,7 +65,7 @@ Since our test set is almost balanced, we relied on “accuracy” as the evalua
 ### Baseline: Logistic Regression
 #### Model Design
 
-Logistic Regression was implemented as the baseline model due to its relatively simple implementation as well as its general intuitiveness. Logistic Regression will perform well in many tasks and is a great place to start when building models. In our literature research, we found that logistic regression was fairly accurate in analyzing and predicting shorter tweets and decided to implement it and then work to improve prediction accuracy with various other models[11]. Before this model, along with the future models, could be trained, the text data had to be vectorized in order to assign a number to different n-grams, as well as to extract text features with higher significance toward sentiment. This model was then trained and validated on a 200,000 tweet dataset, using 75% to train and 25% to validate. 
+Logistic Regression was implemented as the baseline model due to its relatively simple implementation as well as its general intuitiveness. Logistic Regression will perform well in many tasks and is a great place to start when building models. In our literature research, we found that logistic regression was fairly accurate in analyzing and predicting shorter tweets and decided to implement it and then work to improve prediction accuracy with various other models. Before this model, along with the future models, could be trained, the text data had to be vectorized in order to assign a number to different n-grams, as well as to extract text features with higher significance toward sentiment. This model was then trained and validated on a 200,000 tweet dataset, using 75% to train and 25% to validate. 
 <p align = "center">
   <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/LogRegression.png" width="500">
 </p>
@@ -136,7 +138,7 @@ tuned_parameters = {
 
 #### Result
 
-We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report for classifying the training, validation, and test set are illustrated in fig[].
+We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report for classifying the training, validation, and test set are illustrated in the folowing.
 
 <p align="center">
   <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/Naive%20Bayes/NB_class_testset_report.png" width="500">
@@ -185,7 +187,7 @@ We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLS
 </p>
 <p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/" <p align="center">
   
-In practice, although we found that CNN (Convolutional Neural Network) requires significantly less training time and produce higher results compared the other three machine learning algorithms we implemented, Recurrent Neural Network offers higher performance in all the classification evaluation metrics. Fig [] shows the overall architecture of our model. The model used Adam as the optimizer and binary cross entropyloss function metric.
+In practice, although we found that CNN (Convolutional Neural Network) requires significantly less training time and produce higher results compared the other three machine learning algorithms we implemented, Recurrent Neural Network offers higher performance in all the classification evaluation metrics. The figure shows the overall architecture of our model. The model used Adam as the optimizer and binary cross entropyloss function metric.
 
 <p align="center">
   <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_architecture.png" width="350" >
@@ -223,7 +225,7 @@ As showned in the figure below, the model correctly predicted 83.84% of the sent
 </p>
 
 
-We used js.D3 for data visualisation[]. It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS[]. One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend[] indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represent negative sentiment, such as sadness and hate. 
+We used js.D3 for data visualisation (). It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS[]. One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend[] indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represent negative sentiment, such as sadness and hate. 
 
 The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.
        
@@ -330,18 +332,23 @@ Go, A., Bhayani, R., & Huang, L. (2009). Twitter sentiment classification using 
 
 Google News. (2020). Coronavirus (covid-19). Retrieved June 16, 2020, from https://news.google.com/covid19/map?hl=en-US&mid=%2Fm%2F09c7w0&gl=US&ceid=US%3Aen 
 
-[4] Karisani, N., & Karisani, P. (2020). Mining Coronavirus (COVID-19) Posts in Social Media. arXiv preprint arXiv:2004.06778.
+Karisani, N., & Karisani, P. (2020). Mining Coronavirus (COVID-19) Posts in Social Media. arXiv preprint arXiv:2004.06778.
 
-[5] Mittal, A., & Patidar, S. (2019, July). Sentiment Analysis on Twitter Data: A Survey. In Proceedings of the 2019 7th International Conference on Computer and Communications Management (pp. 91-95).
+Mittal, A., & Patidar, S. (2019, July). Sentiment Analysis on Twitter Data: A Survey. In Proceedings of the 2019 7th International Conference on Computer and Communications Management (pp. 91-95).
 
-[6] OMNICORE. (2020). Twitter by the numbers: Stats, demographics fun facts. Retrieved February 10, 2020, from https://www.omnicoreagency.com/twitter-statistics/
+OMNICORE. (2020). Twitter by the numbers: Stats, demographics fun facts. Retrieved February 10, 2020, from https://www.omnicoreagency.com/twitter-statistics/
 
-[7] Pennington, J., Socher, R., & Manning, C. D. (2014, October). Glove: Global vectors for word representation. In Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP) (pp. 1532-1543).
+Pennington, J., Socher, R., & Manning, C. D. (2014, October). Glove: Global vectors for word representation. In Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP) (pp. 1532-1543).
 
 Kaila, R. P., Prasad, A. V. K., & House, F. G. (2020). Informational flow on twitter – corona virus outbreak – topic modelling approach. nternational Journal of Advanced Research in Engi- neering and Technology (IJARET), 11(3), 128–134.
 
-[9] Lamsal, R. (2020). Coronavirus (covid-19) geo-tagged tweets dataset. IEEE Dataport. https://doi. org/10.21227/fpsb-jz61
+Lamsal, R. (2020). Coronavirus (covid-19) geo-tagged tweets dataset. IEEE Dataport. https://doi. org/10.21227/fpsb-jz61
 
-[10] Read, J. (2005, June). Using emoticons to reduce dependency in machine learning techniques for sentiment classification. In Proceedings of the ACL student research workshop (pp. 43-48).
+Read, J. (2005, June). Using emoticons to reduce dependency in machine learning techniques for sentiment classification. In Proceedings of the ACL student research workshop (pp. 43-48).
 
-[11] Samuel, J., Ali, G. G., Rahman, M., Esawi, E., & Samuel, Y. (2020). Covid-19 public sentiment insights and machine learning for tweets classification. Information, 11(6), 314.
+Samuel, J., Ali, G. G., Rahman, M., Esawi, E., & Samuel, Y. (2020). Covid-19 public sentiment insights and machine learning for tweets classification. Information, 11(6), 314.
+
+“What is D3.js?” [Online]. Available: https://www.tutorialsteacher.com/d3js/what-is-d3js. [Accessed: 30-Jul-2020].
+
+Y. Holtz, “The D3 Graph Gallery – Simple charts made in d3.js,” The D3 Graph Gallery – Simple charts made with d3.js, 2019. [Online]. Available: https://www.d3-graph-gallery.com/. [Accessed: 30-Jul-2020].
+
