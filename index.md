@@ -95,8 +95,8 @@ The model results were indeed quite successful for a baseline model. The above r
 <p align="center">
   <img src = "results.png" width="500">
 </p>
-<p align="center">The test set classification report for the LR model </p>
-  
+<p align="center">The test set classification report for the LR model</p>
+
 
 
 ### Multinomial Naive Bayes
