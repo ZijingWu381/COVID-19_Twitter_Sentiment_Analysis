@@ -199,6 +199,15 @@ The purpose of this project was to develop a tool to analyze public sentiment on
     <th style = "width:150px">Pros</th>
     <th style = "width:150px">Cons</th>
   </tr>
+  <tr>
+    <td>LR</td>
+    <td>
+      <ul>
+        <li>Relatively quick and easy implementation make it a good baseline model</li>
+        <li>Efficient to train and tune hyperparameters</li>
+      </ul>
+    </td>
+  </tr>
 </table>
 
 
