@@ -66,7 +66,7 @@ Since our test set is almost balanced, we relied on “accuracy” as the evalua
 
 Logistic Regression was implemented as the baseline model due to its relatively simple implementation as well as its general intuitiveness. Logistic Regression will perform well in many tasks and is a great place to start when building models. In our literature research, we found that logistic regression was fairly accurate in analyzing and predicting shorter tweets and decided to implement it and then work to improve prediction accuracy with various other models. Before this model, along with the future models, could be trained, the text data had to be vectorized in order to assign a number to different n-grams, as well as to extract text features with higher significance toward sentiment. This model was then trained and validated on a 200,000 tweet dataset, using 75% to train and 25% to validate. 
 <p align = "center">
-  <img src = "Image/LogRegression.png" width="500">
+  <img src = "Image/LR/LogRegression.png" width="500">
 </p>
 <p align="center">Visual demonstration of the Logistic Regression model</p>
 <p align = "center">Source: https://machinelearning-blog.com/2018/04/23/logistic-regression-101/</p>
@@ -92,7 +92,7 @@ grid_result = grid_search.fit(x_train_features, y_train)
 
 The model results were indeed quite successful for a baseline model. The above result shows the result of the validation set; however, on the test set the model had an accuracy score of 73.54%. This was very pleasing, but there was certainly room for improvement with further work in implementing some more sophisticated models.
 <p align="center">
-  <img src = "Image/results.png" width="500">
+  <img src = "Image/LR/results.png" width="500">
 </p>
 <p align="center">The test set classification report for the LR model</p>
 
@@ -207,7 +207,7 @@ We first trained our model on a 20,000 subset of the training data with a train 
 The model was trained for 8 epochs, which took 6 hours. The validation loss reached the minimum at around 0.40 in the 5th epoch, and the validation accuracy started to fluctuate around 82% after the 3rd epoch. 
 
 <p align="center">
-  <img src="BiLSTM/NN_loss_fx_acc.png" width="500">
+  <img src="Image/BiLSTM/NN_loss_fx_acc.png" width="500">
 </p>
 <p align="center">The trend of the loss and accuracy of the model during training </p>
 
