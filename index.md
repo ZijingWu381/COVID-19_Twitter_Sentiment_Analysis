@@ -3,7 +3,8 @@
 
 ![Twitter Sentiment Analysis](Image/heading_image.jpg)
  [Image sourse](https://bensonruan.com/twitter-sentiment-analysis-with-tensorflowjs/)
-
+ 
+ [View on Github](https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis)
 
 ## Introduction and Motivation
 
