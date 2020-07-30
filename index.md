@@ -93,7 +93,7 @@ grid_result = grid_search.fit(x_train_features, y_train)
 
 The model results were indeed quite successful for a baseline model. The above result shows the result of the validation set; however, on the test set the model had an accuracy score of 73.54%. This was very pleasing, but there was certainly room for improvement with further work in implementing some more sophisticated models.
 <p align="center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/results.png" width="500">
+  <img src = "results.png" width="500">
 </p>
 <p align="center">The testset classification report for the LR model <p align="center">
 
@@ -168,7 +168,7 @@ SVM = svm.SVC(C = 1, kernel = 'linear', degree = 1, gamma = 'auto', verbose = 'F
 In the validation and testing result, the model gets 77.32% of accuracy for positive sentiment, 80.61% for negative sentiment, and 78.94% for the overall. Since we use a balanced dataset to train the model, the accuracy between positive and negative sentiment does not have an obvious difference. The accuracy of negative sentiment is slightly higher than the positive sentiment. Speaking of the overall performance, the SVM model performs quite well regarding the common machine learning classification models. 
 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/SVM/SVM_results_v2.png" width = "500">
+  <img src = "Image/SVM/SVM_results_v2.png" width = "500">
 </p>
 <p align="center">The testset classification report for the SVM model <p align="center">
 
@@ -183,14 +183,14 @@ For word embedding, we used a pre-trained GloVe word vector obtained by crawling
 We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLSTM is a sequential neural network layer that could capture the long-term dependency among the words in a sentence. A single module of a BiLSTM layer is illustrated below.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="600">
+  <img src="Image/BiLSTM/LSTM_architecture_explained.png" width="600">
 </p>
 <p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/" <p align="center">
   
 In practice, although we found that CNN (Convolutional Neural Network) requires significantly less training time and produce higher results compared the other three machine learning algorithms we implemented, Recurrent Neural Network offers higher performance in all the classification evaluation metrics. The figure shows the overall architecture of our model. The model used Adam as the optimizer and binary cross entropyloss function metric.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_architecture.png" width="350" >
+  <img src="Image/BiLSTM/NN_architecture.png" width="350" >
 </p>
 <p align="center">The architecture of the model. The input and output dimensions are indicated.">
   
@@ -206,14 +206,14 @@ We first trained our model on a 20,000 subset of the training data with a train 
 The model was trained for 8 epochs, which took 6 hours. The validation loss reached the minimum at around 0.40 in the 5th epoch, and the validation accuracy started to fluctuate around 82% after the 3rd epoch. 
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_loss_fx_acc.png" width="500">
+  <img src="BiLSTM/NN_loss_fx_acc.png" width="500">
 </p>
 <p align="center">The trend of the loss and accuracy of the model during training <p align="center">
 
 As showned in the figure below, the model correctly predicted 83.84% of the sentiment polarity of the tweets in the text set. Even though the size of the test set is relatively small, the validation set accuracy on about 20,000 tweets is as high as 82.06%. The model's performance on both validation and the manually graded test set shows its robustness on predicting tweets sentiment.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_class_testset_report.png" width="500">
+  <img src="Image/BiLSTM/NN_class_testset_report.png" width="500">
 </p>
 <p align="center">The testset classification report for the BiLSTM model <p align="center">
   
@@ -223,26 +223,26 @@ As showned in the figure below, the model correctly predicted 83.84% of the sent
 Here is a comparison of the results.
 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/model_result_comparison.png" width="500">
+  <img src = "Image/model_result_comparison.png" width="500">
 </p>
 
 ## Visualisation: Geographic Distribution of Sentiment 
 
 We used js.D3 for data visualisation ('What is D3.js', 2018). It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS (Holtz, 2019). One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represents negative sentiment, such as sadness and hate. 
 
-The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.  
+The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML probably more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.  
 
        
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/map_bilstm.png" width="500">
+  <img src="Image/resuts2/map_bilstm.png" width="500">
 </p>
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/map_nb.png" width="500">
+  <img src="Image/resuts2/map_nb.png" width="500">
 </p>
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/legend.png" width="250">
+  <img src="Image/resuts2/legend.png" width="250">
 </p>
 
 ## Summary and Conclusion
