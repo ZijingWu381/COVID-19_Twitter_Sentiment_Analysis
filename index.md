@@ -229,21 +229,21 @@ Here is a barplot compares the test set performance of our four models. They all
 
 ## Visualisation: Geographic Distribution of Sentiment 
 
-We used js.D3 for data visualisation ('What is D3.js', 2018). It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS (Holtz, 2019). One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represents negative sentiment, such as sadness and hate. 
+We used js.D3 for data visualisation ('What is D3.js', 2018). It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS (Holtz, 2019). It provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represents negative sentiment, such as sadness and hate. 
 
-The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML probably more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.  
+The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML probably more faithfully demonstrates that on June 1st, the public opinion towards COVID-19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.  
 
        
 <p align="center">
-  <img src="Image/resuts2/map_bilstm.png" width="500">
+  <img src="Image/resuts2/map_bilstm.png" width="600">
 </p>
 
 <p align="center">
-  <img src="Image/resuts2/map_nb.png" width="500">
+  <img src="Image/resuts2/map_nb.png" width="600">
 </p>
 
 <p align="center">
-  <img src="Image/resuts2/legend.png" width="250">
+  <img src="Image/resuts2/legend.png" width="350">
 </p>
 
 ## Summary and Conclusion
