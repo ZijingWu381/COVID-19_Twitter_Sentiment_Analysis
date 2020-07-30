@@ -251,7 +251,15 @@ The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respective
 
 The purpose of this project was to develop a tool to analyze public sentiment on Twitter about the COVID-19 pandemic. It is an important topic in today’s world as many people express themselves on social media and being able to appropriately analyze and predict public reactions to events is an extremely powerful tool. In this project, four models were trained for their accuracy in classifying positive and negative tweets on a general set of tweets, then applied to a set of tweets about COVID-19. Each model has its own pros and cons, but the overall outcome aligned with the expected outcome that the recurrent neural net would perform the best. 
 
-<table style = "width: 100%">
+td{
+    border:1px solid #000;
+}
+
+th{
+    white-space:nowrap;
+}
+
+<table style = "width: 100%;">
   <tr>
     <th>Model</th>
     <th style = "width:200px">Pros</th>
