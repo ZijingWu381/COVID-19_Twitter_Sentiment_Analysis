@@ -303,7 +303,7 @@ The purpose of this project was to develop a tool to analyze public sentiment on
       <ul>
         <li>Training time is very long if the dataset is large</li>
         <li>Prone to overfit the training date if number of feature is greater than the number of samples</li>
-        <li>Do not proved probability estimate</li>
+        <li>Not proved probability estimation</li>
       </ul>
     </td>
   </tr>
