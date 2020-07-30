@@ -270,14 +270,15 @@ The purpose of this project was to develop a tool to analyze public sentiment on
     <td>SVM</td>
     <td>
       <ul>
-        <li> </li>
-        <li> </li>
+        <li>Accurate in high dimensional space</li>
+        <li>Memory efficiency</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li> </li>
-        <li> </li>
+        <li>Training time is very long if the dataset is large</li>
+        <li>Prone to overfit the training date if number of feature is greater than the number of samples</li>
+        <li>Do not proved probability estimate</li>
       </ul>
     </td>
   </tr>
