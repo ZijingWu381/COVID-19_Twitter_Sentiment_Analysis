@@ -225,15 +225,15 @@ We used js.D3 for data visualisation[]. It is an open-source JavaScript library 
 The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.
        
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/results2/map_bilstm.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/map_bilstm.png" width="500">
 </p>
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/results2/map_nb.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/map_nb.png" width="500">
 </p>
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/map_nb.png" width="250">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/legend.png" width="250">
 </p>
 
 ## Summary and Conclusion
