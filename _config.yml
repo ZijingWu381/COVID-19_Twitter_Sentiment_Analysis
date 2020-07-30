@@ -1,7 +1,6 @@
 title: COVID-19 Twitter Sentiment Analysis
 description: 
 google_analytics: 
-show_downloads: true
 
 gems:
   - jekyll-mentions
