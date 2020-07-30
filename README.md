@@ -208,7 +208,7 @@ The model was trained for 8 epochs, which took 6 hours. The validation loss reac
 As showned in the figure below, the model correctly predicted 83.84% of the sentiment polarity of the tweets in the text set. Even though the size of the test set is relatively small, the validation set accuracy on about 20,000 tweets is as high as 82.06%. The model's performance on both validation and the manually graded test set shows its robustness on predicting tweets sentiment.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_class_testset_report.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/Image/BiLSTM/NN_class_testset_report.png" width="500">
 </p>
 <p align="center">The testset classification report for the BiLSTM model <p align="center">
   
@@ -225,15 +225,15 @@ We used js.D3 for data visualisation[]. It is an open-source JavaScript library 
 The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.
        
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/results2/map_bilstm.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/Image/results2/map_bilstm.png" width="500">
 </p>
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/results2/map_nb.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/Image/results2/map_nb.png" width="500">
 </p>
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/results2/legend.png" width="250">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/Image/resuts2/map_nb.png" width="250">
 </p>
 
 ## Summary and Conclusion
