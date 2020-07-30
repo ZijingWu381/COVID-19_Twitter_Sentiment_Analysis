@@ -53,6 +53,9 @@ Given the course based nature of the project,  it is worth trying out multiple d
 The following will elaborate our text preprocessing process, evaluation metric. For each model, we will explain the model design and tuning process, following which we will present the result on the test set for comparison. 
 
 ### Preprocessing
+
+First of all, the dataset only keeps the tweets with positive and negative sentiment since the models in this project only fit the date with two categories. After removing the data with neutral sentiment which is labeled by 2, there are around 1.6 million data remaining. The remaining dataset is balanced meaning that around half of the date is positive and another is negative tweets. By keeping the dataset balanced, the models could be trained more robustly not losing any accuracy for either category. Secondly, the tweets are converted into lowercase and also applied by lemmatization. Lastly, the words that are usually in the tweets but do not have a strong sentiment are removed from the tweets. We remove punctuation, usernames, URL, hashtags, and the words with digits.
+
 ### Evaluation Metric
 
 Since our test set is almost balanced, we relied on “accuracy” as the evaluation metric to compare our models’ performance. While other classification metrics including F1 scores, recall, precision are also presented in the results.
@@ -319,30 +322,3 @@ The neural network’s accuracy of 83.84% was very high and quite pleasing for t
 
 Stop word removal can be applied in the data preprocessing phase. Stemming and lemmatization (we used lemmatization; we didn’t use stemming but it is something similar to lemmatization) can reduce the number of features and the inflectional form of words into a common base or root. The dataset will become more dense and consistent and the model will be trained more robustly. Furthermore, figurative language such as irony, sarcasm and metaphors is a hard issue for our model. If any tweets tries to use figurative language, it is very high possible that our models will misinterpret the sentiment.  Also we think emoticons could be important for classifying sentiment. It is removed in the training set for our project. However, it is one of the central elements of text sentiment and thus could be considered in future work.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/miles-zijingwu/COVID19_Twitter_Sentiment_Analysis/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
