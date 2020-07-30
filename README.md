@@ -322,3 +322,16 @@ The neural network’s accuracy of 83.84% was very high and quite pleasing for t
 
 Stop word removal can be applied in the data preprocessing phase. Stemming and lemmatization (we used lemmatization; we didn’t use stemming but it is something similar to lemmatization) can reduce the number of features and the inflectional form of words into a common base or root. The dataset will become more dense and consistent and the model will be trained more robustly. Furthermore, figurative language such as irony, sarcasm and metaphors is a hard issue for our model. If any tweets tries to use figurative language, it is very high possible that our models will misinterpret the sentiment.  Also we think emoticons could be important for classifying sentiment. It is removed in the training set for our project. However, it is one of the central elements of text sentiment and thus could be considered in future work.
 
+## Reference
+
+[1] Bhavitha, B. K., Rodrigues, A. P., & Chiplunkar, N. N. (2017, March). Comparative study of machine learning techniques in sentimental analysis. In 2017 International Conference on Inventive Communication and Computational Technologies (ICICCT) (pp. 216-221). IEEE.
+[2] Go, A., Bhayani, R., & Huang, L. (2009). Twitter sentiment classification using distant supervision. CS224N project report, Stanford, 1(12), 2009.
+[3] Google News. (2020). Coronavirus (covid-19). Retrieved June 16, 2020, from https://news.google.com/covid19/map?hl=en-US&mid=%2Fm%2F09c7w0&gl=US&ceid=US%3Aen 
+[4] Karisani, N., & Karisani, P. (2020). Mining Coronavirus (COVID-19) Posts in Social Media. arXiv preprint arXiv:2004.06778.
+[5] Mittal, A., & Patidar, S. (2019, July). Sentiment Analysis on Twitter Data: A Survey. In Proceedings of the 2019 7th International Conference on Computer and Communications Management (pp. 91-95).
+[6] OMNICORE. (2020). Twitter by the numbers: Stats, demographics fun facts. Retrieved February 10, 2020, from https://www.omnicoreagency.com/twitter-statistics/ 
+[7] Pennington, J., Socher, R., & Manning, C. D. (2014, October). Glove: Global vectors for word representation. In Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP) (pp. 1532-1543).
+[8] Prabhakar Kaila, D., & Prasad, D. A. (2020). Informational flow on Twitter–Corona virus outbreak–topic modelling approach. International Journal of Advanced Research in Engineering and Technology (IJARET), 11(3).
+[9] Rabindra Lamsal. (2020). Coronavirus (COVID-19) Geo-tagged Tweets Dataset. IEEE Dataport. http://dx.doi.org/10.21227/fpsb-jz61
+[10] Read, J. (2005, June). Using emoticons to reduce dependency in machine learning techniques for sentiment classification. In Proceedings of the ACL student research workshop (pp. 43-48).
+[11] Samuel, J., Ali, G. G., Rahman, M., Esawi, E., & Samuel, Y. (2020). Covid-19 public sentiment insights and machine learning for tweets classification. Information, 11(6), 314.
