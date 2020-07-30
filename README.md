@@ -207,6 +207,61 @@ The purpose of this project was to develop a tool to analyze public sentiment on
         <li>Efficient to train and tune hyperparameters</li>
       </ul>
     </td>
+    <td>
+      <ul>
+        <li>Cannot solve nonlinear problems-easy to misclassify a tweet based on one feature</li>
+        <li>Quite vulnerable to overfitting</li>
+      </ul>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>NB</td>
+    <td>
+      <ul>
+        <li>Efficient to tune with its few hyperparameters</li>
+        <li>Perform well especially on short sentences</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Assume independence among words in the sentences</li>
+        <li>Hard to generalize the learning to new form of data because the model heavily relies on the probability relation between the training data and predicted sentiment</li>
+      </ul>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>SVM</td>
+    <td>
+      <ul>
+        <li> </li>
+        <li> </li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li> </li>
+        <li> </li>
+      </ul>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>BiLSTM</td>
+    <td>
+      <ul>
+        <li>Achieve higher accuracy compared to other models by a relatively large margin</li>
+        <li>Could capture sentiment of words not in the training set vocabulary because of the word embedding implementation</li>
+        <li>Has the potential to achieve high performance when more data is available</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Many hyperparameters to tune, need to apply orthogonality principle rigorously to prevent misunderstanding the causality between the tuning and result</li>
+        <li>Need large amount of time and computing resources to train</li>
+      </ul>
+    </td>
   </tr>
 </table>
 
