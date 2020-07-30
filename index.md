@@ -358,11 +358,19 @@ What is D3.js? (2018) Retrieved June 27, 2020, from https://www.tutorialsteacher
 
 Holtz, Y. (2019). The D3 Graph Gallery – Simple charts made in d3.js. The D3 Graph Gallery – Simple charts made with d3.js. Retrieved June 20, 2020,from https://www.d3-graph-gallery.com/.
 
-## Contributions from each team member
+## Contributions
 
-- Akash Shah: Logistic Regression, Report Writing, GitHub pages
-- Chiche Tsai: Support Vector Machine, Data Preprocessing, Report Writing
-- Jiaxi Xu: Visualization (Geographic Map), Report Writing
-- Zijing Wu: Proposal Writing, Data Preprocessing, Naive Bayes, BiLSTM, Visualization, Report Writing, GitHub pages
+- Akash Shah: Logistic Regression, Report Writing, Presentation, GitHub pages
+- Chiche Tsai: Support Vector Machine, Data Preprocessing, Presentation, Report Writing
+- Jiaxi Xu: Visualization (Geographic Map), Presentation, Report Writing
+- Zijing Wu: Proposal Writing, Data Preprocessing, Naive Bayes, BiLSTM, Visualization, Presentation, Report Writing, GitHub pages
+
+## Appendix
+
+Project Proposal: https://www.overleaf.com/read/gxttcgvrnjmm
+
+Presentation slide: https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing
+
+
 
 
