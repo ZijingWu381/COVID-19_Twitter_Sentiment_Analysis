@@ -138,8 +138,26 @@ We scaled the training set to 200,000 tweets with a training-validation split of
 
 ### Support Vector Machine (SVM)
 #### Model Design
+
+In the training phase, the dataset is applied by additional preprocessing. The tweets are tokenized  into words as features by TfidfVectorizer. In order to prevent from having too many features which could be much greater than the number of samples, the model randomly extracts 5000 features to train the model. The model uses 70% of 100,000 data to train and 30% to validate. 
+
+```
+Train_X, Test_X, Train_Y, Test_Y = model_selection.train_test_split(data, labels, test_size = 0.3, random_state = 42)
+Tfidf_vect = TfidfVectorizer(max_features = 5000)
+```
+
 #### Tuning Process
+
+The model parameters are tuned properly. The most important parameter for the SVM model would be the kernel function which generates the best hyperplane that maximizes the margins. The kernel function chosen in this model is linear kernel The model has been tried on other common kernel functions such as polynomial, sigmoid, and Gaussian radial basis function; however, their accuracy is far below the one trained on the linear kernel. Furthermore, the regularization parameter which serves as the cost of misclassification is set to 1. That is, the model more cannot accept misclassification when the regularization parameter is higher. Here, we use exponentially growing sequences to identify the best value for the regularization parameter in this model from 2-5to 25.
+
+```
+SVM = svm.SVC(C = 1, kernel = 'linear', degree = 1, gamma = 'auto', verbose = 'False')
+```
+
 #### Result
+
+In the validation and testing result, the model gets 77.32% of accuracy for positive sentiment, 80.61% for negative sentiment, and 78.94% for the overall. Since we use a balanced dataset to train the model, the accuracy between positive and negative sentiment does not have an obvious difference. The accuracy of negative sentiment is slightly higher than the positive sentiment. Speaking of the overall performance, the SVM model performs quite well regarding the common machine learning classification models. 
+
 
 ### Bidirectional LSTM Recurrent Neural Network
 
