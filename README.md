@@ -175,7 +175,7 @@ We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLS
 <p align="center">
   <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="600">
 </p>
-<p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/">
+<p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/" <p align="center">
   
 In practice, although we found that CNN (Convolutional Neural Network) requires significantly less training time and produce higher results compared the other three machine learning algorithms we implemented, Recurrent Neural Network offers higher performance in all the classification evaluation metrics. Fig [] shows the overall architecture of our model. The model used Adam as the optimizer and binary cross entropyloss function metric.
 
