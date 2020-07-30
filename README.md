@@ -158,6 +158,9 @@ SVM = svm.SVC(C = 1, kernel = 'linear', degree = 1, gamma = 'auto', verbose = 'F
 
 In the validation and testing result, the model gets 77.32% of accuracy for positive sentiment, 80.61% for negative sentiment, and 78.94% for the overall. Since we use a balanced dataset to train the model, the accuracy between positive and negative sentiment does not have an obvious difference. The accuracy of negative sentiment is slightly higher than the positive sentiment. Speaking of the overall performance, the SVM model performs quite well regarding the common machine learning classification models. 
 
+<p align = "center">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/SVM/SVM_results.png" width = "500">
+</p>
 
 ### Bidirectional LSTM Recurrent Neural Network
 
