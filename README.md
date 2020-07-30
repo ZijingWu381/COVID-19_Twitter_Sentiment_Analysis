@@ -89,7 +89,7 @@ The model results were indeed quite successful for a baseline model. The above r
 <p align="center">
   <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/results.png" width="500">
 </p>
-<p align="center">The testset classification report for the NB model <p align="center">
+<p align="center">The testset classification report for the LR model <p align="center">
 
 ### Multinomial Naive Bayes
 #### Model Design
