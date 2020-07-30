@@ -186,7 +186,7 @@ As showned in the Fig[], the model correctly predicted 83.84% of the sentiment p
 </p>
 <p align="center">This is a centered caption for the image<p align="center">
   
-  
+
 
 ## Result Comparison
 ```markdown
