@@ -7,13 +7,13 @@
 
 ## Introduction and Motivation
 
-Since its discovery, the COVID-19 pandemic has quickly become a worldwide crisis that is threatening public health. By the time of writing this report, there have been over 4.3 millions infections and 149 thousands deaths cumulatively in the United States and over 16.2 millions cases and 648 thousands deaths worldwide [1]. Polarized emotion arises as people facing this unprecedented event and could lead to social unrest. When trying to mitigate such public health risk and reopen business, policy makers need to know the real-time and accurate assessment of the public sentiment so that they can make the most effective regulations accordingly. 
+Since its discovery, the COVID-19 pandemic has quickly become a worldwide crisis that is threatening public health. By the time of writing this report, there have been over 4.3 millions infections and 149 thousands deaths cumulatively in the United States and over 16.2 millions cases and 648 thousands deaths worldwide ('Google News', 2020). Polarized emotion arises as people facing this unprecedented event and could lead to social unrest. When trying to mitigate such public health risk and reopen business, policy makers need to know the real-time and accurate assessment of the public sentiment so that they can make the most effective regulations accordingly. 
 
 ### Why Twitter?
-However, the traditional approaches like census or sampling are either slow or not comprehensive. Instead, we aim to provide a faster and more comprehensive assessment of public sentiment. This could be done by performing sentiment analysis on the recent tweet data using machine learning approaches. Nowadays, people frequently share personal experience which may contain a certain level of  sentiment on social media. Especially for Twitter, the US accounts for 31 millions active daily users becoming a decent resource  to collect the public’s sentiment [2]. Given the large number of active users, mining tweets has the potential to give fast and real estimation of people’s sentiment towards the pandemic. 
+However, the traditional approaches like census or sampling are either slow or not comprehensive. Instead, we aim to provide a faster and more comprehensive assessment of public sentiment. This could be done by performing sentiment analysis on the recent tweet data using machine learning approaches. Nowadays, people frequently share personal experience which may contain a certain level of  sentiment on social media. Especially for Twitter, the US accounts for 31 millions active daily users becoming a decent resource  to collect the public’s sentiment ('OMNICORE', 2020). Given the large number of active users, mining tweets has the potential to give fast and real estimation of people’s sentiment towards the pandemic. 
 
 ### Project Overview
-In our work, we acquired two datasets on twitter sentiment analysis subsequently. The first is the a COVID-19 specific sentiment analysis dataset [] found online when we first started the project. It contains over 150 thousands geo-tagged tweets mined with 54 COVID-19 related keywords. However, the sentiment score was assessed using an existing API and not accurate as discovered by our inspection. Thus, we switched our dataset option, but meanwhile, we exploited the geo-tagging feature of this dataset to vividly demonstrate our results by geographically plotting the sentiment. We eventually trained our models on Sentiment140 [], a balanced tweet sentiment analysis dataset contains 1.6 millions tweets classified using emoticons, a method could classify the sentiment at a high accuracy []. We assessed and compared our performance on a manually graded testset provided by the dataset owner. 
+In our work, we acquired two datasets on twitter sentiment analysis subsequently. The first is the a COVID-19 specific sentiment analysis dataset (Lamsal, 2020) found online when we first started the project. It contains over 150 thousands geo-tagged tweets mined with 54 COVID-19 related keywords. However, the sentiment score was assessed using an existing API and not accurate as discovered by our inspection. Thus, we switched our dataset option, but meanwhile, we exploited the geo-tagging feature of this dataset to vividly demonstrate our results by geographically plotting the sentiment. We eventually trained our models on Sentiment140 (Go et al, 2009), a balanced tweet sentiment analysis dataset contains 1.6 millions tweets classified using emoticons, a method could classify the sentiment at a high accuracy (Read et al, 2005). We assessed and compared our performance on a manually graded testset provided by the dataset owner. 
 
 The second step is to extract textual content from Twitter via hydrator or Twitter API. In the third step, we perform preprocessing on the raw tweets. This includes removing punctuations, hashtags, and url, performing word normalization, creating vector space format and feature selection etc.. 
 
@@ -29,9 +29,9 @@ Because of this and the exploration nature of this project, it is worth experime
 
 ## Related Works
 
-It has been shown that compared to Ebola and Zika virus, information flow of twitter on coronavirus outbreak is relevant and mostly accurate and contains minor misinformation [6]. So it could potentially generate helpful public benefit in the current outbreak. 
+It has been shown that compared to Ebola and Zika virus, information flow of twitter on coronavirus outbreak is relevant and mostly accurate and contains minor misinformation (Kaila et al. 2020). So it could potentially generate helpful public benefit in the current outbreak. 
 
-However, while much work has been done towards various aspects of COVID-19, little work has directly addressed the problem of estimating public sentiment towards this major issue [6], which might be due to a lack of labeled dataset. Existing work [7] [8] has tried to evaluate the sentiment score by existing API’s, but this might not be effective. By our inspection, the evaluated scores are not accurate, which might be due to either the capability of the API’s algorithm or that the sentiment analysis methods of the API’s are not trained specifically to address tweets’ special language expression.
+However, while much work has been done towards various aspects of COVID-19, little work has directly addressed the problem of estimating public sentiment towards this major issue [6], which might be due to a lack of labeled dataset. Existing work () () has tried to evaluate the sentiment score by existing API’s, but this might not be effective. By our inspection, the evaluated scores are not accurate, which might be due to either the capability of the API’s algorithm or that the sentiment analysis methods of the API’s are not trained specifically to address tweets’ special language expression.
 
 Therefore, to provide the solution, we had our data trained and tested on Sentiment140, a sentiment analysis dataset containing 1.6 millions tweets. And then we hydrated and assessed the tweets mined with 54 COVID-19 related keywords with our models to present the result. 
 
@@ -324,14 +324,24 @@ Stop word removal can be applied in the data preprocessing phase. Stemming and l
 
 ## Reference
 
-[1] Bhavitha, B. K., Rodrigues, A. P., & Chiplunkar, N. N. (2017, March). Comparative study of machine learning techniques in sentimental analysis. In 2017 International Conference on Inventive Communication and Computational Technologies (ICICCT) (pp. 216-221). IEEE.
-[2] Go, A., Bhayani, R., & Huang, L. (2009). Twitter sentiment classification using distant supervision. CS224N project report, Stanford, 1(12), 2009.
-[3] Google News. (2020). Coronavirus (covid-19). Retrieved June 16, 2020, from https://news.google.com/covid19/map?hl=en-US&mid=%2Fm%2F09c7w0&gl=US&ceid=US%3Aen 
+Bhavitha, B. K., Rodrigues, A. P., & Chiplunkar, N. N. (2017, March). Comparative study of machine learning techniques in sentimental analysis. In 2017 International Conference on Inventive Communication and Computational Technologies (ICICCT) (pp. 216-221). IEEE.
+
+Go, A., Bhayani, R., & Huang, L. (2009). Twitter sentiment classification using distant supervision. CS224N project report, Stanford, 1(12), 2009.
+
+Google News. (2020). Coronavirus (covid-19). Retrieved June 16, 2020, from https://news.google.com/covid19/map?hl=en-US&mid=%2Fm%2F09c7w0&gl=US&ceid=US%3Aen 
+
 [4] Karisani, N., & Karisani, P. (2020). Mining Coronavirus (COVID-19) Posts in Social Media. arXiv preprint arXiv:2004.06778.
+
 [5] Mittal, A., & Patidar, S. (2019, July). Sentiment Analysis on Twitter Data: A Survey. In Proceedings of the 2019 7th International Conference on Computer and Communications Management (pp. 91-95).
-[6] OMNICORE. (2020). Twitter by the numbers: Stats, demographics fun facts. Retrieved February 10, 2020, from https://www.omnicoreagency.com/twitter-statistics/ 
+
+[6] OMNICORE. (2020). Twitter by the numbers: Stats, demographics fun facts. Retrieved February 10, 2020, from https://www.omnicoreagency.com/twitter-statistics/
+
 [7] Pennington, J., Socher, R., & Manning, C. D. (2014, October). Glove: Global vectors for word representation. In Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP) (pp. 1532-1543).
-[8] Prabhakar Kaila, D., & Prasad, D. A. (2020). Informational flow on Twitter–Corona virus outbreak–topic modelling approach. International Journal of Advanced Research in Engineering and Technology (IJARET), 11(3).
-[9] Rabindra Lamsal. (2020). Coronavirus (COVID-19) Geo-tagged Tweets Dataset. IEEE Dataport. http://dx.doi.org/10.21227/fpsb-jz61
+
+Kaila, R. P., Prasad, A. V. K., & House, F. G. (2020). Informational flow on twitter – corona virus outbreak – topic modelling approach. nternational Journal of Advanced Research in Engi- neering and Technology (IJARET), 11(3), 128–134.
+
+[9] Lamsal, R. (2020). Coronavirus (covid-19) geo-tagged tweets dataset. IEEE Dataport. https://doi. org/10.21227/fpsb-jz61
+
 [10] Read, J. (2005, June). Using emoticons to reduce dependency in machine learning techniques for sentiment classification. In Proceedings of the ACL student research workshop (pp. 43-48).
+
 [11] Samuel, J., Ali, G. G., Rahman, M., Esawi, E., & Samuel, Y. (2020). Covid-19 public sentiment insights and machine learning for tweets classification. Information, 11(6), 314.
