@@ -1,8 +1,8 @@
-# COVID-19_Twitter_Sentiment_Analysis
 #### Akash Shah, Chiche Tsai, Jiaxi Xu, Zijing Wu
 
 
-![Twitter Sentiment Analysis](https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/heading_image.jpg)
+![Twitter Sentiment Analysis](Image/heading_image.jpg)
+ [Image sourse](https://bensonruan.com/twitter-sentiment-analysis-with-tensorflowjs/)
 
 
 ## Introduction and Motivation
@@ -15,11 +15,11 @@ However, the traditional approaches like census or sampling are either slow or n
 
 ### Project Overview
 
-In our work, we acquired two datasets on twitter sentiment analysis subsequently. The first is the a COVID-19 specific sentiment analysis dataset (Lamsal, 2020) found online when we first started the project. It contains over 150 thousands geo-tagged tweets mined with 54 COVID-19 related keywords. However, the sentiment score was assessed using an existing API and not accurate as discovered by our inspection. Thus, we switched our dataset option, but meanwhile, we exploited the geo-tagging feature of this dataset to vividly demonstrate our results by geographically plotting the sentiment. We eventually trained our models on Sentiment140 (Go et al., 2009), a balanced tweet sentiment analysis dataset contains 1.6 millions tweets classified using emoticons, a method could classify the sentiment at a high accuracy (Read et al., 2005). We assessed and compared our performance on a manually graded testset provided by the dataset owner. 
+In our work, we acquired two datasets on twitter sentiment analysis subsequently. The first is the a COVID-19 specific sentiment analysis dataset (Lamsal, 2020) found online when we first started the project. It contains over 150 thousands geo-tagged tweets mined with 54 COVID-19 related keywords. However, the sentiment score was assessed using an existing API and not accurate as discovered by our inspection. Thus, we switched our dataset option, but meanwhile, we exploited the geo-tagging feature of this dataset to vividly demonstrate our results by geographically plotting the sentiment. We eventually trained our models on Sentiment140 (Go et al., 2009), a balanced tweet sentiment analysis dataset contains 1.6 millions tweets classified using emoticons, a method could classify the sentiment at a high accuracy (Read et al., 2005). We assessed and compared our performance on a manually graded test set provided by the dataset owner. 
 
 The second step is to extract textual content from Twitter via hydrator or Twitter API. In the third step, we perform preprocessing on the raw tweets. This includes removing punctuations, hashtags, and url, performing word normalization, creating vector space format and feature selection etc.. 
 
-The final step is to build up and train machine learning classifiers to classify the tweet sentiment as either ‘negative’ or ‘positive’. We employed four approaches, which includes three traditional machine learning methods, Logistic Regression (LR), Multinomial Naive Bayes (NB), and Support Vector Machine (SVM), and deep learning approach to tackle the problem. We set LR as the baseline model because of its simple yet effective nature in classification problems. While NB and SVM empirically show fast and relatively effective results in text classification, deep learning approaches have shown the state of the art results in various machine learning tasks including sentiment analysis. In our work, we built a Bidirectional LSTM Recurrent Neural Network (BiLSTM) model with GloVe embedding which yields the highest 83.84% accuracy in our balanced testset. While our LR, NB and SVM classifiers achieve 73.54%, 77.16% and 76.40% accuracy respectively.
+The final step is to build up and train machine learning classifiers to classify the tweet sentiment as either ‘negative’ or ‘positive’. We employed four approaches, which includes three traditional machine learning methods, Logistic Regression (LR), Multinomial Naive Bayes (NB), and Support Vector Machine (SVM), and deep learning approach to tackle the problem. We set LR as the baseline model because of its simple yet effective nature in classification problems. While NB and SVM empirically show fast and relatively effective results in text classification, deep learning approaches have shown the state of the art results in various machine learning tasks including sentiment analysis. For our dataset, though we couldn't find the state of the art performance on it online, we observed that the highest tier of others' work is at around 82% accuracy. In our work, we built a Bidirectional LSTM Recurrent Neural Network (BiLSTM) model with GloVe embedding which yields the highest 83.84% accuracy in our balanced test set. While our LR, NB and SVM classifiers achieve 73.54%, 77.16% and 76.40% accuracy respectively.
 
 The model would not be able to precisely classify sentiment on an individual level, but it can estimate the people’s sentiment towards the pandemic on a regional or national scale, and it has the potential to become a real-time estimator. At the end of the report, we demonstrated this potential with a geographic bubble chart. The color of the bubbles represents the sentiment score of being positive or negative. 
 
@@ -77,7 +77,7 @@ Since our test set is almost balanced, we relied on “accuracy” as the evalua
 
 Logistic Regression was implemented as the baseline model due to its relatively simple implementation as well as its general intuitiveness. Logistic Regression will perform well in many tasks and is a great place to start when building models. In our literature research, we found that logistic regression was fairly accurate in analyzing and predicting shorter tweets and decided to implement it and then work to improve prediction accuracy with various other models. Before this model, along with the future models, could be trained, the text data had to be vectorized in order to assign a number to different n-grams, as well as to extract text features with higher significance toward sentiment. This model was then trained and validated on a 200,000 tweet dataset, using 75% to train and 25% to validate. 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/LogRegression.png" width="500">
+  <img src = "Image/LR/LogRegression.png" width="500">
 </p>
 <p align="center">Visual demonstration of the Logistic Regression model</p>
 <p align = "center">Source: https://machinelearning-blog.com/2018/04/23/logistic-regression-101/</p>
@@ -103,14 +103,16 @@ grid_result = grid_search.fit(x_train_features, y_train)
 
 The model results were indeed quite successful for a baseline model. The above result shows the result of the validation set; however, on the test set the model had an accuracy score of 73.54%. This was very pleasing, but there was certainly room for improvement with further work in implementing some more sophisticated models.
 <p align="center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/results.png" width="500">
+  <img src = "Image/LR/results.png" width="500">
 </p>
-<p align="center">The testset classification report for the LR model <p align="center">
+<p align="center">The test set classification report for the LR model</p>
+
+
 
 ### Multinomial Naive Bayes
 #### Model Design
 
-Despite its naive probability independence assumption and inaccurate numerical prediction, Naive Bayes is an effective text classification algorithm especially for short texts. [8] We chose Multinomial Naive Bayes algorithm because the textual features are finite discrete variables. Before we fit the classifier on the training data, we used a vectorizer to vectorize the text with different combinations of n-grams. Then, we used a tf-idf (term frequency–inverse document frequency) transformer to extract textual features. Using a tf-idf transformer gives more weights to terms that have statistical significance in sentiment and less weights to common terms in the corpus which have insignificant impact on the text sentiment, for example, the stopwords.
+Despite its naive probability independence assumption and inaccurate numerical prediction, Naive Bayes is an effective text classification algorithm especially for short texts. We chose Multinomial Naive Bayes algorithm because the textual features are finite discrete variables. Before we fit the classifier on the training data, we used a vectorizer to vectorize the text with different combinations of n-grams. Then, we used a tf-idf (term frequency–inverse document frequency) transformer to extract textual features. Using a tf-idf transformer gives more weights to terms that have statistical significance in sentiment and less weights to common terms in the corpus which have insignificant impact on the text sentiment, for example, the stopwords.
 To tune the hyperparameters of the vectorizer, transformer, classifiers, we used the PipeLine method in the scikit-learn library to pipe the chosen values for the hyperparameters, as described in the next section.
 
 
@@ -148,12 +150,12 @@ tuned_parameters = {
 
 #### Result
 
-We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report for classifying the training, validation, and test set are illustrated in the folowing.
+We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report on the test set is shown .
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/Naive%20Bayes/NB_class_testset_report.png" width="500">
+  <img src="Image/Naive%20Bayes/NB_class_testset_report.png" width="500">
 </p>
-<p align="center">The testset classification report for the NB model <p align="center">
+<p align="center">The test set classification report for the NB model  </p>
 
 ### Support Vector Machine (SVM)
 #### Model Design
@@ -178,9 +180,9 @@ SVM = svm.SVC(C = 1, kernel = 'linear', degree = 1, gamma = 'auto', verbose = 'F
 In the validation and testing result, the model gets 77.32% of accuracy for positive sentiment, 80.61% for negative sentiment, and 78.94% for the overall. Since we use a balanced dataset to train the model, the accuracy between positive and negative sentiment does not have an obvious difference. The accuracy of negative sentiment is slightly higher than the positive sentiment. Speaking of the overall performance, the SVM model performs quite well regarding the common machine learning classification models. 
 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/SVM/SVM_results_v2.png" width = "500">
+  <img src = "Image/SVM/SVM_results_v2.png" width = "500">
 </p>
-<p align="center">The testset classification report for the SVM model <p align="center">
+<p align="center">The test set classification report for the SVM model  </p>
 
 ### Bidirectional LSTM Recurrent Neural Network
 
@@ -193,16 +195,16 @@ For word embedding, we used a pre-trained GloVe word vector obtained by crawling
 We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLSTM is a sequential neural network layer that could capture the long-term dependency among the words in a sentence. A single module of a BiLSTM layer is illustrated below.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="600">
+  <img src="Image/BiLSTM/LSTM_architecture_explained.png" width="600">
 </p>
-<p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/" <p align="center">
+<p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/ </p>
   
 In practice, although we found that CNN (Convolutional Neural Network) requires significantly less training time and produce higher results compared the other three machine learning algorithms we implemented, Recurrent Neural Network offers higher performance in all the classification evaluation metrics. The figure shows the overall architecture of our model. The model used Adam as the optimizer and binary cross entropyloss function metric.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_architecture.png" width="350" >
+  <img src="Image/BiLSTM/NN_architecture.png" width="350" >
 </p>
-<p align="center">The architecture of the model. The input and output dimensions are indicated.">
+<p align="center">The architecture of the model. The input and output dimensions are indicated.</p>
   
 #### Tuning Process
 
@@ -216,56 +218,59 @@ We first trained our model on a 20,000 subset of the training data with a train 
 The model was trained for 8 epochs, which took 6 hours. The validation loss reached the minimum at around 0.40 in the 5th epoch, and the validation accuracy started to fluctuate around 82% after the 3rd epoch. 
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_loss_fx_acc.png" width="500">
+  <img src="Image/BiLSTM/NN_loss_fx_acc.png" width="500">
 </p>
-<p align="center">The trend of the loss and accuracy of the model during training <p align="center">
+<p align="center">The trend of the loss and accuracy of the model during training </p>
 
 As showned in the figure below, the model correctly predicted 83.84% of the sentiment polarity of the tweets in the text set. Even though the size of the test set is relatively small, the validation set accuracy on about 20,000 tweets is as high as 82.06%. The model's performance on both validation and the manually graded test set shows its robustness on predicting tweets sentiment.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_class_testset_report.png" width="500">
+  <img src="Image/BiLSTM/NN_class_testset_report.png" width="500">
 </p>
-<p align="center">The testset classification report for the BiLSTM model <p align="center">
+<p align="center">The test set classification report for the BiLSTM model  </p>
   
 
 ## Result Comparison
 
-Here is a comparison of the results.
+Here is a barplot compares the test set performance of our four models. They all achieve higher than 70% in all metrics. While the BiLSTM model outperforms the others by having a 83.84% accuracy on the manually graded test set.
 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/model_result_comparison.png" width="500">
+  <img src = "Image/model_result_comparison.png" width="500">
 </p>
 
 ## Visualisation: Geographic Distribution of Sentiment 
 
-We used js.D3 for data visualisation ('What is D3.js', 2018). It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS (Holtz, 2019). One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represents negative sentiment, such as sadness and hate. 
+We used js.D3 for data visualisation ('What is D3.js', 2018). It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS (Holtz, 2019). It provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represents negative sentiment, such as sadness and hate. 
 
-The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.  
+The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML probably more faithfully demonstrates that on June 1st, the public opinion towards COVID-19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.  
 
        
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/map_bilstm.png" width="500">
+  <img src="Image/resuts2/map_bilstm.png" width="600">
 </p>
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/map_nb.png" width="500">
+  <img src="Image/resuts2/map_nb.png" width="600">
 </p>
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/legend.png" width="250">
+  <img src="Image/resuts2/legend.png" width="350">
 </p>
 
 ## Summary and Conclusion
 
 The purpose of this project was to develop a tool to analyze public sentiment on Twitter about the COVID-19 pandemic. It is an important topic in today’s world as many people express themselves on social media and being able to appropriately analyze and predict public reactions to events is an extremely powerful tool. In this project, four models were trained for their accuracy in classifying positive and negative tweets on a general set of tweets, then applied to a set of tweets about COVID-19. Each model has its own pros and cons, but the overall outcome aligned with the expected outcome that the recurrent neural net would perform the best. 
-<table style = "width: 75%">
+
+
+
+<table style = "width: 100%;">
   <tr>
     <th>Model</th>
-    <th style = "width:150px">Pros</th>
-    <th style = "width:150px">Cons</th>
+    <th style = "width:440px">Pros</th>
+    <th style = "width:440px">Cons</th>
   </tr>
   <tr>
-    <td>LR</td>
+    <td align="center" valign="center">LR</td> 
     <td>
       <ul>
         <li>Relatively quick and easy implementation make it a good baseline model</li>
@@ -281,7 +286,7 @@ The purpose of this project was to develop a tool to analyze public sentiment on
   </tr>
   
   <tr>
-    <td>NB</td>
+    <td align="center" valign="center">NB</td>
     <td>
       <ul>
         <li>Efficient to tune with its few hyperparameters</li>
@@ -297,7 +302,7 @@ The purpose of this project was to develop a tool to analyze public sentiment on
   </tr>
   
   <tr>
-    <td>SVM</td>
+    <td align="center" valign="center">SVM</td>
     <td>
       <ul>
         <li>Accurate in high dimensional space</li>
@@ -308,13 +313,13 @@ The purpose of this project was to develop a tool to analyze public sentiment on
       <ul>
         <li>Training time is very long if the dataset is large</li>
         <li>Prone to overfit the training date if number of feature is greater than the number of samples</li>
-        <li>Do not proved probability estimate</li>
+        <li>Not proved probability estimation</li>
       </ul>
     </td>
   </tr>
   
   <tr>
-    <td>BiLSTM</td>
+    <td align="center" valign="center">BiLSTM</td>
     <td>
       <ul>
         <li>Achieve higher accuracy compared to other models by a relatively large margin</li>
@@ -331,12 +336,12 @@ The purpose of this project was to develop a tool to analyze public sentiment on
   </tr>
 </table>
 
-The neural network’s accuracy of 83.84% was very high and quite pleasing for the topic of estimating sentiment. This is a challenging process as sarcasm and other grammatical structures are generally unknown to a model, so this accuracy rate is certainly useful for a future use by public policy makers in enacting restrictions and guidelines for their respective cities. As the data in the previous section show, sentiment across Europe was moving to be relatively more positive, whereas America was becoming more negative. This analysis, in combination with recommendations from the CDC has the potential to be a real time estimator of sentiment to aid in the creation of mask-wearing and social distancing mandates and regulations. Moving forward, more globalized data and more data points would certainly be needed, but this neural network model is a great start to finding an effective solution for policy makers around the country and the world.
+Though we couldn't find the state of the art of this dataset online, we observed that the highest tier of others' work is at around 82% accuracy. BiLSTM model's accuracy of 83.84% was very high and quite pleasing for the topic of estimating sentiment. This is a challenging process as sarcasm and other grammatical structures are generally unknown to a model, so this accuracy rate is certainly useful for a future use by public policy makers in enacting restrictions and guidelines for their respective cities. As the data in the previous section show, sentiment across Europe was moving to be relatively more positive, whereas America was becoming more negative. This analysis, in combination with recommendations from the CDC has the potential to be a real time estimator of sentiment to aid in the creation of mask-wearing and social distancing mandates and regulations. Moving forward, more globalized data and more data points would certainly be needed, but this neural network model is a great start to finding an effective solution for policy makers around the country and the world.
 
 
 ## Future Work
 
-Stop word removal can be applied in the data preprocessing phase. The dataset will become more dense and consistent and the model will be trained more robustly. Furthermore, figurative language such as irony, sarcasm and metaphors is a hard issue for our model. If any tweets tries to use figurative language, it is very high possible that our models will misinterpret the sentiment.  Also we think emoticons could be important for classifying sentiment. It is removed in the training set for our project. However, it is one of the central elements of text sentiment and thus could be considered in future work.
+We kept stop words in our data because we discovered keeping them improved the performance on BiLSTM. But removing stop words usually improves the performance of the algorithms. Future experiments could test the effect on the other three models we implemented. Besides that, we could try different word embedding method for the neural network method. And we could experiment with more network architectures besides CNN and RNN based on the research literature. Furthermore, figurative language such as irony, sarcasm and metaphors is a hard issue for our model. If any tweets tries to use figurative language, it is very possible that our models will misinterpret the sentiment.  Also we think emoticons could be important for classifying sentiment. It is removed in the training set for our project. However, it is one of the central elements of text sentiment and thus could be considered in future work.
 
 ## Reference
 
@@ -365,5 +370,21 @@ Samuel, J., Ali, G. G., Rahman, M., Esawi, E., & Samuel, Y. (2020). Covid-19 pub
 What is D3.js? (2018) Retrieved June 27, 2020, from https://www.tutorialsteacher.com/d3js/what-is-d3js.
 
 Holtz, Y. (2019). The D3 Graph Gallery – Simple charts made in d3.js. The D3 Graph Gallery – Simple charts made with d3.js. Retrieved June 20, 2020,from https://www.d3-graph-gallery.com/.
+
+## Contributions
+
+- Akash Shah: Logistic Regression, Report Writing, Presentation, GitHub pages
+- Chiche Tsai: Support Vector Machine, Data Preprocessing, Presentation, Report Writing
+- Jiaxi Xu: Visualization (Geographic Map), Presentation, Report Writing
+- Zijing Wu: Proposal Writing, Data Preprocessing, Naive Bayes, BiLSTM, Visualization, Presentation, Report Writing, GitHub pages
+
+
+## Links
+
+Project Proposal:  [https://www.overleaf.com/read/gxttcgvrnjmm](https://www.overleaf.com/read/gxttcgvrnjmm)
+
+Presentation slide: [https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing](https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing) 
+
+
 
 
