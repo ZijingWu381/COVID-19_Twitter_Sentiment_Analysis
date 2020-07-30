@@ -56,7 +56,17 @@ The following will elaborate our text preprocessing process, evaluation metric. 
 
 ### Preprocessing
 
-First of all, the dataset only keeps the tweets with positive and negative sentiment since the models in this project only fit the date with two categories. After removing the data with neutral sentiment which is labeled by 2, there are around 1.6 million data remaining. The remaining dataset is balanced meaning that around half of the date is positive and another is negative tweets. By keeping the dataset balanced, the models could be trained more robustly not losing any accuracy for either category. Secondly, the tweets are converted into lowercase and also applied by lemmatization. Lastly, the words that are usually in the tweets but do not have a strong sentiment are removed from the tweets. We remove punctuation, usernames, URL, hashtags, and the words with digits.
+For the training data, we first read in the csv files and keep only 'Tweets' and 'Labels' columns. Originally in the dataset, positive and negative tweets were labeled by '4' and '0' respectively. We replaced '4' with '1.' For each individual tweets, we apply the following preprocessting steps:
+
+1. Normalizing text by lemmatization and converting words to lower case
+2. Remove common tweet elements don't contribute to the sentiment, urls, usernames, and hashtags
+3. Remove words containing digits
+4. Expand all contractions like, for example, 'don't' to 'do not'
+5. Remove punctuations
+6. Delete tweets has encoding errors, for there were the non-English tweets that were not correctly encoded by the encoder
+7. Tokenize and turn each tweet string into a list of tokens.
+
+For the test data, besides applying the same preprocessing process, we remove tweets labeled with neutral sentiment since our classification is binary.
 
 ### Evaluation Metric
 
@@ -326,7 +336,7 @@ The neural network’s accuracy of 83.84% was very high and quite pleasing for t
 
 ## Future Work
 
-Stop word removal can be applied in the data preprocessing phase. Stemming and lemmatization (we used lemmatization; we didn’t use stemming but it is something similar to lemmatization) can reduce the number of features and the inflectional form of words into a common base or root. The dataset will become more dense and consistent and the model will be trained more robustly. Furthermore, figurative language such as irony, sarcasm and metaphors is a hard issue for our model. If any tweets tries to use figurative language, it is very high possible that our models will misinterpret the sentiment.  Also we think emoticons could be important for classifying sentiment. It is removed in the training set for our project. However, it is one of the central elements of text sentiment and thus could be considered in future work.
+Stop word removal can be applied in the data preprocessing phase. The dataset will become more dense and consistent and the model will be trained more robustly. Furthermore, figurative language such as irony, sarcasm and metaphors is a hard issue for our model. If any tweets tries to use figurative language, it is very high possible that our models will misinterpret the sentiment.  Also we think emoticons could be important for classifying sentiment. It is removed in the training set for our project. However, it is one of the central elements of text sentiment and thus could be considered in future work.
 
 ## Reference
 
