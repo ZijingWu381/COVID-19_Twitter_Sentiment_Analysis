@@ -101,7 +101,7 @@ The model results were indeed quite successful for a baseline model. The above r
 ### Multinomial Naive Bayes
 #### Model Design
 
-Despite its naive probability independence assumption and inaccurate numerical prediction, Naive Bayes is an effective text classification algorithm especially for short texts. [8] We chose Multinomial Naive Bayes algorithm because the textual features are finite discrete variables. Before we fit the classifier on the training data, we used a vectorizer to vectorize the text with different combinations of n-grams. Then, we used a tf-idf (term frequency–inverse document frequency) transformer to extract textual features. Using a tf-idf transformer gives more weights to terms that have statistical significance in sentiment and less weights to common terms in the corpus which have insignificant impact on the text sentiment, for example, the stopwords.
+Despite its naive probability independence assumption and inaccurate numerical prediction, Naive Bayes is an effective text classification algorithm especially for short texts. We chose Multinomial Naive Bayes algorithm because the textual features are finite discrete variables. Before we fit the classifier on the training data, we used a vectorizer to vectorize the text with different combinations of n-grams. Then, we used a tf-idf (term frequency–inverse document frequency) transformer to extract textual features. Using a tf-idf transformer gives more weights to terms that have statistical significance in sentiment and less weights to common terms in the corpus which have insignificant impact on the text sentiment, for example, the stopwords.
 To tune the hyperparameters of the vectorizer, transformer, classifiers, we used the PipeLine method in the scikit-learn library to pipe the chosen values for the hyperparameters, as described in the next section.
 
 
@@ -139,7 +139,7 @@ tuned_parameters = {
 
 #### Result
 
-We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report for classifying the training, validation, and test set are illustrated in the folowing.
+We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report on the test set is shown .
 
 <p align="center">
   <img src="Image/Naive%20Bayes/NB_class_testset_report.png" width="500">
