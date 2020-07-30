@@ -178,7 +178,7 @@ In the validation and testing result, the model gets 77.32% of accuracy for posi
 
 Although NB and SVM have shown their consistent reliable performance in a variety of text classification tasks, in recent years, deep learning methods have outperformed them as more data are available and more neural network architectures and word embedding methods are designed. And given the large size of the 1.6 million training data, we decided to build a neural network model to classify the sentiment. 
 
-For word embedding, we used a pre-trained GloVe word vector obtained by crawling 840B words online []. The words vector has 2.2 million vocabulary and 300 dimensional semantic properties. With word embedding, we are able to train a model to predict sentiment of words even though they are not contained in the training set vocabulary. For example, we could still use our model to accurately predict the sentiment of “It is fantastic,” suppose the term ‘fantastic’ is not in our vocabulary,  because a synonym of it, take ‘awesome’ for example, is in our vocabulary. That the two terms have similar word representation vectors in our pre-train GloVe model enables our model to transfer its training. 
+For word embedding, we used a pre-trained GloVe word vector obtained by crawling 840B words online (Pennington et al., 2014). The words vector has 2.2 million vocabulary and 300 dimensional semantic properties. With word embedding, we are able to train a model to predict sentiment of words even though they are not contained in the training set vocabulary. For example, we could still use our model to accurately predict the sentiment of “It is fantastic,” suppose the term ‘fantastic’ is not in our vocabulary,  because a synonym of it, take ‘awesome’ for example, is in our vocabulary. That the two terms have similar word representation vectors in our pre-train GloVe model enables our model to transfer its training. 
 
 We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLSTM is a sequential neural network layer that could capture the long-term dependency among the words in a sentence. A single module of a BiLSTM layer is illustrated below.
 
@@ -220,12 +220,15 @@ As showned in the figure below, the model correctly predicted 83.84% of the sent
 
 ## Result Comparison
 
+Here is a comparison of the results.
+
 <p align = "center">
   <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/model_result_comparison.png" width="500">
 </p>
 
+## Visualisation: Geographic Distribution of Sentiment 
 
-We used js.D3 for data visualisation (). It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS[]. One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend[] indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represent negative sentiment, such as sadness and hate. 
+We used js.D3 for data visualisation. It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS. One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represent negative sentiment, such as sadness and hate. 
 
 The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.
        
@@ -347,8 +350,4 @@ Lamsal, R. (2020). Coronavirus (covid-19) geo-tagged tweets dataset. IEEE Datapo
 Read, J. (2005, June). Using emoticons to reduce dependency in machine learning techniques for sentiment classification. In Proceedings of the ACL student research workshop (pp. 43-48).
 
 Samuel, J., Ali, G. G., Rahman, M., Esawi, E., & Samuel, Y. (2020). Covid-19 public sentiment insights and machine learning for tweets classification. Information, 11(6), 314.
-
-“What is D3.js?” [Online]. Available: https://www.tutorialsteacher.com/d3js/what-is-d3js. [Accessed: 30-Jul-2020].
-
-Y. Holtz, “The D3 Graph Gallery – Simple charts made in d3.js,” The D3 Graph Gallery – Simple charts made with d3.js, 2019. [Online]. Available: https://www.d3-graph-gallery.com/. [Accessed: 30-Jul-2020].
 
