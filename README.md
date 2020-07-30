@@ -228,9 +228,10 @@ Here is a comparison of the results.
 
 ## Visualisation: Geographic Distribution of Sentiment 
 
-We used js.D3 for data visualisation. It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS. One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represent negative sentiment, such as sadness and hate. 
+We used js.D3 for data visualisation. It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS. One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represents negative sentiment, such as sadness and hate. 
 
-The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.
+The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respectively. Comparing the results of them on the map, BiSTML more faithfully demonstrates that on June 1st, the public opinion towards COVID19 was still largely passive. On the contrary, the result from NB still claims that the sentiment was relatively optimistic.  
+
        
 <p align="center">
   <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/resuts2/map_bilstm.png" width="500">
