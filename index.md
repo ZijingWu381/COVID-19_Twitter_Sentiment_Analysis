@@ -253,8 +253,8 @@ The purpose of this project was to develop a tool to analyze public sentiment on
 <table style = "width: 100%">
   <tr>
     <th>Model</th>
-    <th style = "width:50px">Pros</th>
-    <th style = "width:50px">Cons</th>
+    <th style = "width:85px">Pros</th>
+    <th style = "width:85px">Cons</th>
   </tr>
   <tr>
     <td>LR</td>
