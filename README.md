@@ -134,7 +134,7 @@ We scaled the training set to 200,000 tweets with a training-validation split of
 <p align="center">
   <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/Naive%20Bayes/NB_class_testset_report.png" width="500">
 </p>
-<p align="center">This is a centered caption for the image<p align="center">
+<p align="center">The testset classification report for the NB model <p align="center">
 
 ### Support Vector Machine (SVM)
 #### Model Design
@@ -173,7 +173,7 @@ For word embedding, we used a pre-trained GloVe word vector obtained by crawling
 We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLSTM is a sequential neural network layer that could capture the long-term dependency among the words in a sentence. A single module of a BiLSTM layer is illustrated below.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/LSTM_architecture_explained.png" width="600">
 </p>
 <p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/">
   
@@ -196,7 +196,7 @@ We first trained our model on a 20,000 subset of the training data with a train 
 The model was trained for 8 epochs, which took 6 hours. The validation loss reached the minimum at around 0.40 in the 5th epoch, and the validation accuracy started to fluctuate around 82% after the 3rd epoch. 
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_loss_fx_acc.png" width="400">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_loss_fx_acc.png" width="500">
 </p>
 <p align="center">The trend of the loss and accuracy of the model during training <p align="center">
 
@@ -211,7 +211,7 @@ As showned in the figure below, the model correctly predicted 83.84% of the sent
 ## Result Comparison
 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/model_result_comparison.png">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/model_result_comparison.png" width="500">
 </p>
 
 
