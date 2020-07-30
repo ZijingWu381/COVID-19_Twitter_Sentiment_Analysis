@@ -305,7 +305,7 @@ The neural network’s accuracy of 83.84% was very high and quite pleasing for t
 
 ## Future Work
 
-As mentioned above, 
+Stop word removal can be applied in the data preprocessing phase. Stemming and lemmatization (we used lemmatization; we didn’t use stemming but it is something similar to lemmatization) can reduce the number of features and the inflectional form of words into a common base or root. The dataset will become more dense and consistent and the model will be trained more robustly. Furthermore, figurative language such as irony, sarcasm and metaphors is a hard issue for our model. If any tweets tries to use figurative language, it is very high possible that our models will misinterpret the sentiment.  Also we think emoticons could be important for classifying sentiment. It is removed in the training set for our project. However, it is one of the central elements of text sentiment and thus could be considered in future work.
 
 ```markdown
 Syntax highlighted code block
