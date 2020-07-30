@@ -210,6 +210,14 @@ As showned in the Fig[], the model correctly predicted 83.84% of the sentiment p
 
 ## Result Comparison
 
+<p align = "center">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/Results/results_graph.png">
+</p>
+
+We used js.D3 for data visualisation[]. It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS[]. One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend[] indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represent negative sentiment, such as sadness and hate. 
+
+       
+  
 
 ## Summary and Conclusion
 
