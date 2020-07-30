@@ -65,6 +65,7 @@ Logistic Regression was implemented as the baseline model due to its relatively 
   <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/LogRegression.png" width="500">
 </p>
 <p align="center">Visual demonstration of the Logistic Regression model</p>
+<p align = "center">Source: https://machinelearning-blog.com/2018/04/23/logistic-regression-101/</p>
   
 
 #### Tuning Process
