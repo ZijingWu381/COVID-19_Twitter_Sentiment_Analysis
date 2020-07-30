@@ -15,11 +15,11 @@ However, the traditional approaches like census or sampling are either slow or n
 
 ### Project Overview
 
-In our work, we acquired two datasets on twitter sentiment analysis subsequently. The first is the a COVID-19 specific sentiment analysis dataset (Lamsal, 2020) found online when we first started the project. It contains over 150 thousands geo-tagged tweets mined with 54 COVID-19 related keywords. However, the sentiment score was assessed using an existing API and not accurate as discovered by our inspection. Thus, we switched our dataset option, but meanwhile, we exploited the geo-tagging feature of this dataset to vividly demonstrate our results by geographically plotting the sentiment. We eventually trained our models on Sentiment140 (Go et al., 2009), a balanced tweet sentiment analysis dataset contains 1.6 millions tweets classified using emoticons, a method could classify the sentiment at a high accuracy (Read et al., 2005). We assessed and compared our performance on a manually graded testset provided by the dataset owner. 
+In our work, we acquired two datasets on twitter sentiment analysis subsequently. The first is the a COVID-19 specific sentiment analysis dataset (Lamsal, 2020) found online when we first started the project. It contains over 150 thousands geo-tagged tweets mined with 54 COVID-19 related keywords. However, the sentiment score was assessed using an existing API and not accurate as discovered by our inspection. Thus, we switched our dataset option, but meanwhile, we exploited the geo-tagging feature of this dataset to vividly demonstrate our results by geographically plotting the sentiment. We eventually trained our models on Sentiment140 (Go et al., 2009), a balanced tweet sentiment analysis dataset contains 1.6 millions tweets classified using emoticons, a method could classify the sentiment at a high accuracy (Read et al., 2005). We assessed and compared our performance on a manually graded test set provided by the dataset owner. 
 
 The second step is to extract textual content from Twitter via hydrator or Twitter API. In the third step, we perform preprocessing on the raw tweets. This includes removing punctuations, hashtags, and url, performing word normalization, creating vector space format and feature selection etc.. 
 
-The final step is to build up and train machine learning classifiers to classify the tweet sentiment as either ‘negative’ or ‘positive’. We employed four approaches, which includes three traditional machine learning methods, Logistic Regression (LR), Multinomial Naive Bayes (NB), and Support Vector Machine (SVM), and deep learning approach to tackle the problem. We set LR as the baseline model because of its simple yet effective nature in classification problems. While NB and SVM empirically show fast and relatively effective results in text classification, deep learning approaches have shown the state of the art results in various machine learning tasks including sentiment analysis. In our work, we built a Bidirectional LSTM Recurrent Neural Network (BiLSTM) model with GloVe embedding which yields the highest 83.84% accuracy in our balanced testset. While our LR, NB and SVM classifiers achieve 73.54%, 77.16% and 76.40% accuracy respectively.
+The final step is to build up and train machine learning classifiers to classify the tweet sentiment as either ‘negative’ or ‘positive’. We employed four approaches, which includes three traditional machine learning methods, Logistic Regression (LR), Multinomial Naive Bayes (NB), and Support Vector Machine (SVM), and deep learning approach to tackle the problem. We set LR as the baseline model because of its simple yet effective nature in classification problems. While NB and SVM empirically show fast and relatively effective results in text classification, deep learning approaches have shown the state of the art results in various machine learning tasks including sentiment analysis. In our work, we built a Bidirectional LSTM Recurrent Neural Network (BiLSTM) model with GloVe embedding which yields the highest 83.84% accuracy in our balanced test set. While our LR, NB and SVM classifiers achieve 73.54%, 77.16% and 76.40% accuracy respectively.
 
 The model would not be able to precisely classify sentiment on an individual level, but it can estimate the people’s sentiment towards the pandemic on a regional or national scale, and it has the potential to become a real-time estimator. At the end of the report, we demonstrated this potential with a geographic bubble chart. The color of the bubbles represents the sentiment score of being positive or negative. 
 
@@ -95,7 +95,9 @@ The model results were indeed quite successful for a baseline model. The above r
 <p align="center">
   <img src = "results.png" width="500">
 </p>
-<p align="center">The testset classification report for the LR model <p align="center">
+<p align="center">The test set classification report for the LR model </p>
+  
+
 
 ### Multinomial Naive Bayes
 #### Model Design
@@ -143,7 +145,7 @@ We scaled the training set to 200,000 tweets with a training-validation split of
 <p align="center">
   <img src="Image/Naive_Bayes/NB_class_testset_report.png" width="500">
 </p>
-<p align="center">The testset classification report for the NB model <p align="center">
+<p align="center">The test set classification report for the NB model  </p>
 
 ### Support Vector Machine (SVM)
 #### Model Design
@@ -170,7 +172,7 @@ In the validation and testing result, the model gets 77.32% of accuracy for posi
 <p align = "center">
   <img src = "Image/SVM/SVM_results_v2.png" width = "500">
 </p>
-<p align="center">The testset classification report for the SVM model <p align="center">
+<p align="center">The test set classification report for the SVM model  </p>
 
 ### Bidirectional LSTM Recurrent Neural Network
 
@@ -185,14 +187,14 @@ We employed 2 Bidirectional LSTM layers (BiLSTM) in our model architecture. BiLS
 <p align="center">
   <img src="Image/BiLSTM/LSTM_architecture_explained.png" width="600">
 </p>
-<p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/" <p align="center">
+<p align="center">Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/ </p>
   
 In practice, although we found that CNN (Convolutional Neural Network) requires significantly less training time and produce higher results compared the other three machine learning algorithms we implemented, Recurrent Neural Network offers higher performance in all the classification evaluation metrics. The figure shows the overall architecture of our model. The model used Adam as the optimizer and binary cross entropyloss function metric.
 
 <p align="center">
   <img src="Image/BiLSTM/NN_architecture.png" width="350" >
 </p>
-<p align="center">The architecture of the model. The input and output dimensions are indicated.">
+<p align="center">The architecture of the model. The input and output dimensions are indicated.</p>
   
 #### Tuning Process
 
@@ -208,19 +210,19 @@ The model was trained for 8 epochs, which took 6 hours. The validation loss reac
 <p align="center">
   <img src="BiLSTM/NN_loss_fx_acc.png" width="500">
 </p>
-<p align="center">The trend of the loss and accuracy of the model during training <p align="center">
+<p align="center">The trend of the loss and accuracy of the model during training </p>
 
 As showned in the figure below, the model correctly predicted 83.84% of the sentiment polarity of the tweets in the text set. Even though the size of the test set is relatively small, the validation set accuracy on about 20,000 tweets is as high as 82.06%. The model's performance on both validation and the manually graded test set shows its robustness on predicting tweets sentiment.
 
 <p align="center">
   <img src="Image/BiLSTM/NN_class_testset_report.png" width="500">
 </p>
-<p align="center">The testset classification report for the BiLSTM model <p align="center">
+<p align="center">The test set classification report for the BiLSTM model  </p>
   
 
 ## Result Comparison
 
-Here is a comparison of the results.
+Here is a barplot compares the test set performance of our four models. They all achieve higher than 70% in all metrics. While the BiLSTM model outperforms the others by having a 83.84% accuracy on the manually graded test set.
 
 <p align = "center">
   <img src = "Image/model_result_comparison.png" width="500">
@@ -248,6 +250,7 @@ The calculated accuracy for BiSTML and Naive Bayes are 83.84%, 77.16% respective
 ## Summary and Conclusion
 
 The purpose of this project was to develop a tool to analyze public sentiment on Twitter about the COVID-19 pandemic. It is an important topic in today’s world as many people express themselves on social media and being able to appropriately analyze and predict public reactions to events is an extremely powerful tool. In this project, four models were trained for their accuracy in classifying positive and negative tweets on a general set of tweets, then applied to a set of tweets about COVID-19. Each model has its own pros and cons, but the overall outcome aligned with the expected outcome that the recurrent neural net would perform the best. 
+
 <table style = "width: 75%">
   <tr>
     <th>Model</th>
