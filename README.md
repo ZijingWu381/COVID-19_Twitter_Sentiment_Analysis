@@ -167,7 +167,7 @@ In practice, although we found that CNN (Convolutional Neural Network) can be fu
 
 While the implementation of the model was done on personal computer, the whole training is carried out on Google colab using its cloud computing power. We used the platform's TPU to accelerate the experiment iteration.
 
-We first trained our model on a 20,000 subset of the training data with a train validation splitting ratio of 0.2. The small number of tweets let us make quick updates of the hyperparameters with short iterations. We apply orthogonal principle to our tuning procedure. Eventually, the maximum size of vocabulary was set as 20,000. The batch size was set to be 256. The maximum length of a sentence padding is 40. We applied a customized exponential learning rate decay which is constant in the initial 2 epochs and exponentially decays afterwards. The start learning rate is set to be 0.0018. We then trained our model on the full 1.6 million tweets to fine tuned the start learning rate and make appropriate adjustments to the epoch numbers. A 0.0125 train-validation split is applied to let the model validate its training on about 20,000 tweets after each epoch.
+We first trained our model on a 20,000 subset of the training data with a train validation splitting ratio of 0.2. The small number of tweets let us make quick updates of the hyperparameters with short iterations. We apply orthogonal principle to our tuning procedure. Eventually, the maximum size of vocabulary was set as 20,000. The batch size was set to be 256. The maximum length of a sentence padding is 40. We applied a customized exponential learning rate decay which is constant in the initial 2 epochs and exponentially decays afterwards. The start learning rate is set to be 0.0018. We then trained our model on the full 1.6 million tweets to fine tuned the start learning rate and make appropriate adjustments to the epoch numbers. A 0.0125 train-validation split is applied to make the model validate its training on about 20,000 tweets after each epoch.
 
 
 #### Result
@@ -187,8 +187,19 @@ As showned in the Fig[], the model correctly predicted 83.84% of the sentiment p
 <p align="center">This is a centered caption for the image<p align="center">
   
 
-
 ## Result Comparison
+
+
+## Summary and Conclusion
+
+The purpose of this project was to develop a tool to analyze public sentiment on Twitter about the COVID-19 pandemic. It is an important topic in today’s world as many people express themselves on social media and being able to appropriately analyze and predict public reactions to events is an extremely powerful tool. In this project, four models were trained for their accuracy in classifying positive and negative tweets on a general set of tweets, then applied to a set of tweets about COVID-19. Each model has its own pros and cons, but the overall outcome aligned with the expected outcome that the recurrent neural net would perform the best. 
+<table>
+  <th>Model</th><th>Pros</th><th>Cons</th>
+</table>
+## Future Work
+
+As mentioned
+
 ```markdown
 Syntax highlighted code block
 
