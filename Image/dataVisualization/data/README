@@ -1,0 +1,7 @@
+formatData.py is to format data for the convenience of data visualization
+plainCountrymap.html is to generate a plain world map
+dataVis_singleMap is to generate the sentiment score of a single day on a single map
+    Data using is "NB_sample.csv" or "NN_sample.csv"
+dataVis_transition is to generate a historical tracker of a week
+    Data using is in /data/transition
+
