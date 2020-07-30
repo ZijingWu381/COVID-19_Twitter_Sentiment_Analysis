@@ -189,10 +189,6 @@ As showned in the Fig[], the model correctly predicted 83.84% of the sentiment p
 
 ## Result Comparison
 
-<p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/model_result_comparison.png" width="200">
-</p>
-<p align="center">This is a centered caption for the image<p align="center">
 
 ## Summary and Conclusion
 
@@ -211,13 +207,70 @@ The purpose of this project was to develop a tool to analyze public sentiment on
         <li>Efficient to train and tune hyperparameters</li>
       </ul>
     </td>
+    <td>
+      <ul>
+        <li>Cannot solve nonlinear problems-easy to misclassify a tweet based on one feature</li>
+        <li>Quite vulnerable to overfitting</li>
+      </ul>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>NB</td>
+    <td>
+      <ul>
+        <li>Efficient to tune with its few hyperparameters</li>
+        <li>Perform well especially on short sentences</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Assume independence among words in the sentences</li>
+        <li>Hard to generalize the learning to new form of data because the model heavily relies on the probability relation between the training data and predicted sentiment</li>
+      </ul>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>SVM</td>
+    <td>
+      <ul>
+        <li> </li>
+        <li> </li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li> </li>
+        <li> </li>
+      </ul>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>BiLSTM</td>
+    <td>
+      <ul>
+        <li>Achieve higher accuracy compared to other models by a relatively large margin</li>
+        <li>Could capture sentiment of words not in the training set vocabulary because of the word embedding implementation</li>
+        <li>Has the potential to achieve high performance when more data is available</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Many hyperparameters to tune, need to apply orthogonality principle rigorously to prevent misunderstanding the causality between the tuning and result</li>
+        <li>Need large amount of time and computing resources to train</li>
+      </ul>
+    </td>
   </tr>
 </table>
+
+The neural network’s accuracy of 83.84% was very high and quite pleasing for the topic of estimating sentiment. This is a challenging process as sarcasm and other grammatical structures are generally unknown to a model, so this accuracy rate is certainly useful for a future use by public policy makers in enacting restrictions and guidelines for their respective cities. As the data in the previous section show, sentiment across Europe was moving to be relatively more positive, whereas America was becoming more negative. This analysis, in combination with recommendations from the CDC has the potential to be a real time estimator of sentiment to aid in the creation of mask-wearing and social distancing mandates and regulations. Moving forward, more globalized data and more data points would certainly be needed, but this neural network model is a great start to finding an effective solution for policy makers around the country and the world.
 
 
 ## Future Work
 
-As mentioned
+As mentioned above, 
 
 ```markdown
 Syntax highlighted code block
