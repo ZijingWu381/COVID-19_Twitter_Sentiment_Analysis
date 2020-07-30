@@ -368,11 +368,12 @@ Holtz, Y. (2019). The D3 Graph Gallery – Simple charts made in d3.js. The D3 G
 - Jiaxi Xu: Visualization (Geographic Map), Presentation, Report Writing
 - Zijing Wu: Proposal Writing, Data Preprocessing, Naive Bayes, BiLSTM, Visualization, Presentation, Report Writing, GitHub pages
 
-## Appendix
 
-Project Proposal: https://www.overleaf.com/read/gxttcgvrnjmm
+## Links
 
-Presentation slide: https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing
+### Project Proposal:  [](https://www.overleaf.com/read/gxttcgvrnjmm)
+
+### Presentation slide: [](https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing) 
 
 
 
