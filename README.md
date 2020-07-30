@@ -132,7 +132,7 @@ tuned_parameters = {
 We scaled the training set to 200,000 tweets with a training-validation split of 0.05. We then tested it on the test set. We achieved 77.16% accuracy for our Multinomial Naive Bayes model. The classification report for classifying the training, validation, and test set are illustrated in fig[].
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/Naive%20Bayes/NB_class_report.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/upload/master/Image/Naive%20Bayes" width="500">
 </p>
 <p align="center">This is a centered caption for the image<p align="center">
 
@@ -203,7 +203,7 @@ The model was trained for 8 epochs, which took 6 hours. The validation loss reac
 As showned in the Fig[], the model correctly predicted 83.84% of the sentiment polarity of the tweets in the text set. Even though the size of the test set is relatively small, the validation set accuracy on about 20,000 tweets is as high as 82.06%. The model's performance on both validation and the manually graded test set shows its robutness on predicting tweets sentiment.
 
 <p align="center">
-  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_class_report.png" width="500">
+  <img src="https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/upload/master/Image/BiLSTM" width="500">
 </p>
 <p align="center">This is a centered caption for the image<p align="center">
   
@@ -211,7 +211,7 @@ As showned in the Fig[], the model correctly predicted 83.84% of the sentiment p
 ## Result Comparison
 
 <p align = "center">
-  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/Results/results_graph.png" width = "500">
+  <img src = "https://github.com/miles-zijingwu/COVID-19_Twitter_Sentiment_Analysis/blob/master/Image/BiLSTM/NN_class_testset_report.png" width = "500">
 </p>
 
 We used js.D3 for data visualisation[]. It is an open-source JavaScript library developed by Mike Bostock to create custom interactive data visualizations in the web browser using SVG, HTML and CSS[]. One great feature is that it provides an abundant toolbox rather than fixed applications so that we can customize the graphs based on our needs. Geographical Bubble chart is the basic format in our case, with some deviations. First, the size of the bubble is constant, while the locations become the emphasis. Second, the color legend[] indicates that green color corresponds to positive sentiment, such as happiness and kindness, while the red color represent negative sentiment, such as sadness and hate. 
