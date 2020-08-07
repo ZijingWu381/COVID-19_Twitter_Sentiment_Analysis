@@ -13,9 +13,9 @@ The repository contains the algorithm implementations, images, and markdown file
 
 ## Other Links
 
-Project Proposal:  [https://www.overleaf.com/read/gxttcgvrnjmm](https://www.overleaf.com/read/gxttcgvrnjmm)
+[Project Proposal](https://www.overleaf.com/read/gxttcgvrnjmm)
 
-Presentation slide: [https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing](https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing) 
+[Presentation slide](https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing) 
 
 
 
