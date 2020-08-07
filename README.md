@@ -6,7 +6,7 @@
 
 ## About
 
-This repository archives our project on COVID-19 Twitter Sentiment Analysis. The project is part of the 2020 Summer CS 4641 Machine Learning course and serves for offering opportunity of classroom learning application and deeper exploration.
+This repository archives our project on COVID-19 Twitter Sentiment Analysis. The project is part of the 2020 Summer CS 4641 Machine Learning and serves for offering opportunity of classroom learning application and further exploration.
 
 The repository contains the algorithm implementations, images, and markdown file of the report. The report can be viewed online at https://miles-zijingwu.github.io/COVID-19_Twitter_Sentiment_Analysis/
 
