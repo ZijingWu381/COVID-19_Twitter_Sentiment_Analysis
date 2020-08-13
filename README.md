@@ -1,4 +1,4 @@
-## About
+## About new change!
 
 This repository archives our project on COVID-19 Twitter Sentiment Analysis. The project is part of the 2020 Summer CS 4641 Machine Learning and serves for offering opportunity of classroom learning application and further exploration.
 
@@ -15,7 +15,7 @@ The repository contains the code files, images, and markdown file of the report.
 
 [Project Proposal](https://www.overleaf.com/read/gxttcgvrnjmm)
 
-[Presentation slide](https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing) 
+[Presentation slide](https://docs.google.com/presentation/d/1ukBi3k4OzWWKA_J5qw5LF4meNF-45sVsmApjpwzLQD4/edit?usp=sharing)
 
 
 
